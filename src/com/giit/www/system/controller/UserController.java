@@ -18,10 +18,10 @@ public class UserController {
     @Resource(name = "userBizImpl")
     private UserBiz userBiz;
 
-    @RequestMapping
+    @RequestMapping("findAll")
     public String findAll(Model m) {
         m.addAttribute("userList", userBiz.findAll());
-        return "jsp/system/user";
+        return "system/user";
     }
 
 }

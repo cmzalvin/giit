@@ -33,12 +33,12 @@
                                 <tbody>
                                 <c:forEach var="user" items="${userList}">
                                     <tr>
-                                        <td>${user.id}</td>
+                                        <td>${user.userId}</td>
                                         <td>${user.password}</td>
                                         <td>${user.authority}</td>
                                         <td>email</td>
-                                        <td><a href="/admin/alterUser.jsp?id=${user.id}">修改</a></td>
-                                        <td><a href="/admin/deleteUser.do?id=${user.id}"
+                                        <td><a href="/admin/alterUser.jsp?id=${user.userId}">修改</a></td>
+                                        <td><a href="/admin/deleteUser.do?id=${user.userId}"
                                                onclick="return confirm('是否要删除该用户')">删除</a>
                                         </td>
                                     </tr>
