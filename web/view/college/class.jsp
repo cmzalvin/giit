@@ -3,45 +3,45 @@
 <jsp:include page="/nav.jsp"></jsp:include>
 <!-- Page Content -->
 <div id="page-wrapper">
+
     <div class="container-fluid">
         <div>
-            <h1 class="page-header">系部管理</h1>
+            <h1 class="page-header">班级管理</h1>
         </div>
-        <div class="panel-heading">
-        </div>
+        <%--<c:forEach var="entrty" items="${classBelongSpec}">--%>
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        系信息
+                        班级信息
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+
                                 <thead>
                                 <tr>
-                                    <th>系名</th>
-                                    <th></th>
+                                    <th>所属专业</th>
+                                    <th>班级号</th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach var="dept" items="${deptList}">
+                                <%--<c:forEach var="className" items="${entrty.value}">--%>
+                                <c:forEach var="clazz" items="${classList}">
                                     <tr>
-                                        <td>${dept.deptName}</td>
+                                        <td>${clazz.specName}</td>
+                                        <td>${clazz.id}</td>
                                         <td>
-                                            <a href="/view/college/dept_update.jsp?deptId=${dept.deptId}&deptName=${dept.deptName}">修改</a>
-                                        </td>
-                                        <td>
-                                            <a href="/dept.do/delete?deptId=${dept.deptId}"
-                                               onclick="return confirm('是否要删除该系')">删除</a>
+                                            <a href="/class.do/delete?classId=${clazz.id}"
+                                               onclick="return confirm('是否要删除该专业')">删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
+                                <%--</c:forEach>--%>
                                 </tbody>
                             </table>
-                            <a href="/view/college/dept_add.jsp" class="btn btn-primary" role="button">添加系</a>
                         </div>
                         <!-- /.table-responsive -->
                     </div>
@@ -51,8 +51,11 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
-    </div>
 
+        <%--</c:forEach>--%>
+
+    </div>
+    <a href="/view/college/class_add.jsp" class="btn btn-primary" role="button">添加班级</a>
     <!-- /.container-fluid -->
 </div>
 </div>

@@ -2,6 +2,7 @@ package com.giit.www.college.service.impl;
 
 import com.giit.www.college.dao.DeptDao;
 import com.giit.www.college.service.DeptBiz;
+import com.giit.www.entity.custom.DeptAndSpec;
 import com.giit.www.entity.Dept;
 import org.springframework.stereotype.Service;
 
@@ -32,4 +33,5 @@ public class DeptBizImpl implements DeptBiz {
     public void delete(int deptId) {
         deptDao.delete(deptId);
     }
+
 }

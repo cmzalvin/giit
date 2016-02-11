@@ -21,7 +21,7 @@ public class DeptController {
 
     @RequestMapping("findAll")
     public String findAll(Model m) {
-        m.addAttribute("departments", deptBiz.findAll());
+        m.addAttribute("deptList", deptBiz.findAll());
         return "/college/dept";
     }
 
@@ -42,5 +42,6 @@ public class DeptController {
         deptBiz.delete(deptId);
         return "redirect:/dept.do/findAll";
     }
+
 
 }

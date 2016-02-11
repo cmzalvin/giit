@@ -11,16 +11,17 @@
         <result property="deptName" column="dept_name"/>
     </resultMap>
 
+
     <select id="findAll" resultMap="dept_map">
         SELECT * FROM department
     </select>
 
-    <select id="findById" parameterType="int" resultMap="dept_map">
-        SELECT * FROM department WHERE dept_id = #{value}
+    <select id="findAllDeptName" resultType="String">
+        SELECT dept_name FROM department
     </select>
 
-    <select id="findByName" parameterType="String" resultMap="dept_map">
-        SELECT * FROM department WHERE dept_name = #{value}
+    <select id="findById" parameterType="int" resultMap="dept_map">
+        SELECT * FROM department WHERE dept_id = #{value}
     </select>
 
     <update id="update" parameterType="Dept">

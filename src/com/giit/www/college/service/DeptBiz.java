@@ -1,5 +1,6 @@
 package com.giit.www.college.service;
 
+import com.giit.www.entity.custom.DeptAndSpec;
 import com.giit.www.entity.Dept;
 
 import java.util.List;
@@ -15,4 +16,5 @@ public interface DeptBiz {
     public void update(Dept dept);
 
     public void delete(int deptId);
+
 }
