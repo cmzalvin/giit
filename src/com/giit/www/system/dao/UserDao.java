@@ -9,4 +9,12 @@ import java.util.List;
  */
 public interface UserDao {
     public List<User> findAll();
+
+    public User findById(String id);
+
+    public void update(User user);
+
+    public void add(User user);
+
+    public void delete(String id);
 }

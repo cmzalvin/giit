@@ -16,4 +16,19 @@
         SELECT * FROM user
     </select>
 
+    <select id="findById" parameterType="String" resultMap="user_map">
+        SELECT * FROM user WHERE user_id = #{value}
+    </select>
+
+    <update id="update" parameterType="User">
+        UPDATE user SET password = #{password} ,authority = #{authority} WHERE user_id = #{userId}
+    </update>
+
+    <insert id="add" parameterType="User">
+        INSERT INTO user(user_id,password,hash,authority) VALUES(#{userId},#{password},#{hash},#{authority})
+    </insert>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM user WHERE user_id = #{value}
+    </delete>
 </mapper>

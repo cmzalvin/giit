@@ -22,5 +22,24 @@ public class UserBizImpl implements UserBiz {
     public List<User> findAll() {
         return userDao.findAll();
     }
+
+    @Override
+    public User findById(String id) {
+        return userDao.findById(id);
+    }
+
+    @Override
+    public void update(User user) {
+        userDao.update(user);
+    }
+
+    public void add(User user) {
+        userDao.add(user);
+    }
+
+    @Override
+    public void delete(String id) {
+        userDao.delete(id);
+    }
 }
 
