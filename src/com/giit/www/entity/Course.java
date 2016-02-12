@@ -5,8 +5,6 @@ package com.giit.www.entity;
  */
 public class Course {
     String courseTitle;
-    String courseId;
-    String courseCode;
     String type;
     String speciality;
     float credits;
@@ -17,22 +15,6 @@ public class Course {
 
     public void setCourseTitle(String courseTitle) {
         this.courseTitle = courseTitle;
-    }
-
-    public String getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(String courseId) {
-        this.courseId = courseId;
-    }
-
-    public String getCourseCode() {
-        return courseCode;
-    }
-
-    public void setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
     }
 
     public String getType() {

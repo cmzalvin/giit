@@ -14,20 +14,20 @@
     <title>桂林电子科技大学教材订购系统</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
+    <link href="/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
           rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- custom Fonts -->
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you util the page via file:// -->
@@ -60,11 +60,11 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="/admin/userProfile.jsp"><i class="fa fa-user fa-fw"></i> 用户设置</a>
+                    <li><a href="/account.do/profile.view"><i class="fa fa-user fa-fw"></i> 用户设置</a>
                     </li>
 
                     <li class="divider"></li>
-                    <li><a href="/admin/logout.do"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
+                    <li><a href="/account.do/logout"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -80,7 +80,7 @@
                         <a href="/admin/admin.jsp"><i class="fa fa-book fa-fw"></i> 控制面板</a>
                     </li>
                     <li>
-                        <a href="/admin/userManagement.jsp"><i class="fa fa-book fa-fw"></i> 用户管理</a>
+                        <a href="/user.do/user.view"><i class="fa fa-book fa-fw"></i> 用户管理</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> 学院管理<span class="fa arrow"></span></a>
@@ -89,25 +89,25 @@
                                 <a href="/1.html"> 整体概况</a>
                             </li>
                             <li>
-                                <a href="/admin/departmentManagement.jsp"> 系部设置</a>
+                                <a href="/dept.do/dept.view"> 系部设置</a>
                             </li>
                             <li>
-                                <a href="/admin/specialityManagement.jsp"> 专业设置</a>
+                                <a href="/spec.do/spec.view"> 专业设置</a>
                             </li>
                             <li>
-                                <a href="/admin/classManagement.jsp"> 班级管理</a>
+                                <a href="/clazz.do/clazz.view"> 班级管理</a>
                             </li>
                             <li>
-                                <a href="/admin/courseManagement.jsp"> 添加课程</a>
+                                <a href="/course.do/course.view"> 添加课程</a>
                             </li>
                             <li>
-                                <a href="/admin/sectionManagement.jsp"> 课程安排</a>
+                                <a href="/section.do/section.view"> 课程安排</a>
                             </li>
                             <li>
-                                <a href="/admin/studentManagement.jsp"> 学生管理</a>
+                                <a href="/student.do/student.view"> 学生管理</a>
                             </li>
                             <li>
-                                <a href="/admin/elective.jsp"> 学生选课</a>
+                                <a href="/elective.do/elective.view"> 学生选课</a>
                             </li>
                             <li>
                                 <a href="/secretary_view.jsp"> 秘书审核</a>

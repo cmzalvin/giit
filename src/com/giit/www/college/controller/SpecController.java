@@ -21,35 +21,35 @@ public class SpecController {
     SpecBiz specBiz;
 
 
-    @RequestMapping("findDept")
+    @RequestMapping("spec_add.view")
     public String findDept(Model m) {
         m.addAttribute("deptNameList", specBiz.findDpet());
         return "/college/spec_add";
     }
 
     //TODO 该名字deptAndSpec不好,但是不知道如何命名-, -
-    @RequestMapping("findDeptAndSpec")
+    @RequestMapping("spec.view")
     public String findDeptAndSpec(Model m) {
         m.addAttribute("deptAndSpec", specBiz.findDeptAndSpec());
         return "/college/spec";
     }
 
     @RequestMapping("update")
-    public String update(@Param("specName") String newSpecName, @Param("newSpecName")String specName) {
-        specBiz.update( specName, newSpecName);
-        return "redirect:/spec.do/findDeptAndSpec";
+    public String update(@Param("specName") String newSpecName, @Param("newSpecName") String specName) {
+        specBiz.update(specName, newSpecName);
+        return "redirect:/spec.do/spec.view";
     }
 
     @RequestMapping("add")
     public String add(Spec spec) {
         specBiz.add(spec);
-        return "redirect:/spec.do/findDeptAndSpec";
+        return "redirect:/spec.do/spec.view";
     }
 
     @RequestMapping("delete")
     public String delete(String specName) {
         specBiz.delete(specName);
-        return "redirect:/spec.do/findDeptAndSpec";
+        return "redirect:/spec.do/spec.view";
     }
 
 }

@@ -20,22 +20,22 @@ public class ClazzController {
     @RequestMapping("add")
     public String add(String deptName, String specName, String year) {
         clazzBiz.add(deptName, specName, year);
-        return "redirect:/class.do/findAll";
+        return "redirect:/class.do/clazz.view";
     }
 
     @RequestMapping("delete")
     public String delete(int clazzId) {
         clazzBiz.delete(clazzId);
-        return "redirect:/clazz.do/findAll";
+        return "redirect:/clazz.do/clazz.view";
     }
 
-    @RequestMapping("findAll")
+    @RequestMapping("clazz.view")
     public String findAll(Model m) {
         m.addAttribute("clazzList", clazzBiz.findAll());
         return "/college/clazz";
     }
 
-    @RequestMapping("findDeptAndSpec")
+    @RequestMapping("clazz_add.view")
     public String findDeptAndSpec(Model m) {
         m.addAttribute("deptAndSpec", clazzBiz.findDeptAndSpec());
         return "/college/clazz_add";

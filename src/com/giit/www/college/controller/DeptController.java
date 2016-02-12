@@ -19,7 +19,7 @@ public class DeptController {
     @Resource(name = "deptBizImpl")
     private DeptBiz deptBiz;
 
-    @RequestMapping("findAll")
+    @RequestMapping("dept.view")
     public String findAll(Model m) {
         m.addAttribute("deptList", deptBiz.findAll());
         return "/college/dept";
@@ -28,19 +28,19 @@ public class DeptController {
     @RequestMapping("add")
     public String add(String deptName) {
         deptBiz.add(deptName);
-        return "redirect:/dept.do/findAll";
+        return "redirect:/dept.do/dept.view";
     }
 
     @RequestMapping("update")
     public String update(Dept dept) {
         deptBiz.update(dept);
-        return "redirect:/dept.do/findAll";
+        return "redirect:/dept.do/dept.view";
     }
 
     @RequestMapping("delete")
     public String delete(int deptId) {
         deptBiz.delete(deptId);
-        return "redirect:/dept.do/findAll";
+        return "redirect:/dept.do/dept.view";
     }
 
 

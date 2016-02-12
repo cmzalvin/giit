@@ -22,8 +22,8 @@ public class UserController {
     @Resource(name = "userBizImpl")
     private UserBiz userBiz;
 
-    @RequestMapping("findAll")
-    public String findAll(Model m) {
+    @RequestMapping("user.view")
+    public String userView(Model m) {
         m.addAttribute("userList", userBiz.findAll());
         return "system/userinfo/user";
     }
@@ -38,19 +38,19 @@ public class UserController {
     @RequestMapping("update")
     public String update(User user) {
         userBiz.update(user);
-        return "redirect:/user.do/findAll";
+        return "redirect:/user.do/user.view";
     }
 
     @RequestMapping("add")
     public String add(User user) {
         userBiz.add(user);
-        return "redirect:/user.do/findAll";
+        return "redirect:/user.do/user.view";
     }
 
     @RequestMapping("delete")
     public String delete(String id) {
         userBiz.delete(id);
-        return "redirect:/user.do/findAll";
+        return "redirect:/user.do/user.view";
     }
 
 }

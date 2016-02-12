@@ -27,6 +27,10 @@
         SELECT * FROM speciality
     </select>
 
+    <select id="findAllSpecName" resultType="String">
+        SELECT spec_name FROM speciality
+    </select>
+
     <select id="findIdByName" parameterType="String" resultType="String">
         SELECT spec_id FROM speciality WHERE spec_name = #{value}
     </select>

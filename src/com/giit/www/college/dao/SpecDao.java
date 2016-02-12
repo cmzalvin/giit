@@ -21,4 +21,6 @@ public interface SpecDao {
     public List<DeptAndSpec> findDeptAndSpec();
 
     public String findIdByName(String specName);
+
+    public List<String> findAllSpecName();
 }
