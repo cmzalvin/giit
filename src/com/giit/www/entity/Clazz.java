@@ -3,18 +3,18 @@ package com.giit.www.entity;
 /**
  * Created by c0de8ug on 16-2-9.
  */
-public class Class {
-    String classId;
+public class Clazz {
+    String clazzId;
     String className;
     String year;
     String specName;
 
-    public String getClassId() {
-        return classId;
+    public String getClazzId() {
+        return clazzId;
     }
 
-    public void setClassId(String classId) {
-        this.classId = classId;
+    public void setClazzId(String clazzId) {
+        this.clazzId = clazzId;
     }
 
     public String getClassName() {

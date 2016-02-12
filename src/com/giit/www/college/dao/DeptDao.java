@@ -13,6 +13,8 @@ public interface DeptDao {
 
     public void add(String deptName);
 
+    public String findIdByName(String deptName);
+
     public void update(Dept dept);
 
     public void delete(int deptId);

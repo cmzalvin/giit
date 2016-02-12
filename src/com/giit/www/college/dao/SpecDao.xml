@@ -27,8 +27,8 @@
         SELECT * FROM speciality
     </select>
 
-    <select id="findById" parameterType="int" resultMap="spec_map">
-        SELECT * FROM department WHERE dept_id = #{value}
+    <select id="findIdByName" parameterType="String" resultType="String">
+        SELECT spec_id FROM speciality WHERE spec_name = #{value}
     </select>
 
     <update id="update" parameterType="map">

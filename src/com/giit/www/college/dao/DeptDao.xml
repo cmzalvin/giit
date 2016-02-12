@@ -24,6 +24,9 @@
         SELECT * FROM department WHERE dept_id = #{value}
     </select>
 
+    <select id="findIdByName" parameterType="String" resultType="String">
+        SELECT dept_id FROM department WHERE dept_name = #{value}
+    </select>
     <update id="update" parameterType="Dept">
         UPDATE department SET dept_name = #{deptName} WHERE dept_id = #{deptId}
     </update>
