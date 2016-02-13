@@ -86,7 +86,7 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> 学院管理<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/1.html"> 整体概况</a>
+                                <a href="/admin.do/admin.view"> 整体概况</a>
                             </li>
                             <li>
                                 <a href="/dept.do/dept.view"> 系部设置</a>
@@ -110,10 +110,10 @@
                                 <a href="/elective.do/elective.view"> 学生选课</a>
                             </li>
                             <li>
-                                <a href="/secretary_view.jsp"> 秘书审核</a>
+                                <a href="/orderbook.do/orderbook.view/"> 秘书审核</a>
                             </li>
                             <li>
-                                <a href="/teacher_view.jsp"> 教材添加</a>
+                                <a href="/orderbook.do/orderbook_add.view"> 教材添加</a>
                             </li>
 
                         </ul>

@@ -22,16 +22,21 @@ public class SpecController {
 
 
     @RequestMapping("spec_add.view")
-    public String findDept(Model m) {
+    public String specAddView(Model m) {
         m.addAttribute("deptNameList", specBiz.findDpet());
         return "/college/spec_add";
     }
 
     //TODO 该名字deptAndSpec不好,但是不知道如何命名-, -
     @RequestMapping("spec.view")
-    public String findDeptAndSpec(Model m) {
+    public String specView(Model m) {
         m.addAttribute("deptAndSpec", specBiz.findDeptAndSpec());
         return "/college/spec";
+    }
+
+    @RequestMapping("spec_update.view")
+    public String specUpdateView(Model m) {
+        return "/college/spec_update";
     }
 
     @RequestMapping("update")

@@ -32,7 +32,7 @@
                                         <tr>
                                             <td>${specName}</td>
                                             <td>
-                                                <a href="/view/college/spec_update.jsp?specName=${specName}">修改</a>
+                                                <a href="/spec.do/spec_update.view?specName=${specName}">修改</a>
                                             </td>
                                             <td>
                                                 <a href="/spec.do/delete?specName=${specName}"

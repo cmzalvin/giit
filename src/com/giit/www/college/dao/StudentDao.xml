@@ -5,7 +5,18 @@
 
 
 <mapper namespace="com.giit.www.college.dao.StudentDao">
-    <select id="findAll" resultType="Student">
+    <resultMap id="student_map" type="Student">
+        <id property="studentId" column="student_id"/>
+        <result property="studentName" column="student_name"/>
+        <result property="idCard" column="id_card"/>
+        <result property="year" column="year"/>
+        <result property="className" column="class_name"/>
+        <result property="telephoneNumber" column="telephone_number"/>
+        <result property="student_origin_base" column="studentOriginBase"/>
+        <result property="gender" column="gender"/>
+        <result property="photo" column="photo"/>
+    </resultMap>
+    <select id="findAll" resultMap="student_map">
         SELECT * FROM student
     </select>
 

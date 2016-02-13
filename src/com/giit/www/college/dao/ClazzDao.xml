@@ -26,6 +26,6 @@
     </delete>
 
     <select id="getClassCount" parameterType="map" resultType="int">
-        SELECT count(spec_name) FROM class WHERE spec_name = #{specName} AND year = #{year}
+        SELECT count(class_id) FROM class WHERE spec_name = #{specName} AND year = #{year}
     </select>
 </mapper>

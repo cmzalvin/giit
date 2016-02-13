@@ -20,9 +20,19 @@ public class DeptController {
     private DeptBiz deptBiz;
 
     @RequestMapping("dept.view")
-    public String findAll(Model m) {
+    public String deptView(Model m) {
         m.addAttribute("deptList", deptBiz.findAll());
         return "/college/dept";
+    }
+
+    @RequestMapping("dept_add.view")
+    public String deptAddView(Model m) {
+        return "/college/dept_add";
+    }
+
+    @RequestMapping("dept_update.view")
+    public String deptUpdateView(Model m) {
+        return "/college/dept_update";
     }
 
     @RequestMapping("add")

@@ -3,6 +3,7 @@ package com.giit.www.college.controller;
 import com.giit.www.college.service.ClazzBiz;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
@@ -20,7 +21,7 @@ public class ClazzController {
     @RequestMapping("add")
     public String add(String deptName, String specName, String year) {
         clazzBiz.add(deptName, specName, year);
-        return "redirect:/class.do/clazz.view";
+        return "redirect:/clazz.do/clazz.view";
     }
 
     @RequestMapping("delete")
@@ -37,7 +38,8 @@ public class ClazzController {
 
     @RequestMapping("clazz_add.view")
     public String findDeptAndSpec(Model m) {
-        m.addAttribute("deptAndSpec", clazzBiz.findDeptAndSpec());
+        m.addAttribute("deptAndSpecJson", clazzBiz.findDeptAndSpecJson());
+        m.addAttribute("deptNameList", clazzBiz.findDeptNameList());
         return "/college/clazz_add";
     }
 }

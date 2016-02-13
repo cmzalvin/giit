@@ -5,7 +5,7 @@
 <div id="page-wrapper">
     <div class="container-fluid">
         <div>
-            <h1 class="page-header">系部管理</h1>
+            <h1 class="page-header">学生管理</h1>
         </div>
         <div class="panel-heading">
         </div>
@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        系信息
+                        学生信息
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -21,27 +21,41 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                 <tr>
-                                    <th>系名</th>
+                                    <th>学号</th>
+                                    <th>姓名</th>
+                                    <th>身份证号</th>
+                                    <th>性别</th>
+                                    <th>电话号码</th>
+                                    <th>班级</th>
+                                    <th>年级</th>
+                                    <th>生源地</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach var="dept" items="${deptList}">
+                                <c:forEach var="student" items="${studentList}">
                                     <tr>
-                                        <td>${dept.deptName}</td>
+                                        <td>${student.studentId}</td>
+                                        <td>${student.studentName}</td>
+                                        <td>${student.idCard}</td>
+                                        <td>${student.gender}</td>
+                                        <td>${student.telephoneNumber}</td>
+                                        <td>${student.className}</td>
+                                        <td>${student.year}</td>
+                                        <td>${student.studentOriginBase}</td>
                                         <td>
-                                            <a href="/dept.do/dept_update.view?deptId=${dept.deptId}&deptName=${dept.deptName}">修改</a>
+                                            <a href="/student.do/update?studentId=${student.studentId}">修改</a>
                                         </td>
                                         <td>
-                                            <a href="/dept.do/delete?deptId=${dept.deptId}"
-                                               onclick="return confirm('是否要删除该系')">删除</a>
+                                            <a href="/student.do/delete?studentId=${student.studentId}"
+                                               onclick="return confirm('是否要删除该学生信息')">删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <a href="/dept.do/dept_add.view" class="btn btn-primary" role="button">添加系</a>
+                            <a href="/student.do/student_add.view" class="btn btn-primary" role="button">添加学生</a>
                         </div>
                         <!-- /.table-responsive -->
                     </div>

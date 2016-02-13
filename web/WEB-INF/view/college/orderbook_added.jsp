@@ -1,8 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<jsp:include page="/teacherViewAddedBookForm.do"></jsp:include>
-
 <c:if test="${courses != null}">
     <div class="panel panel-default">
         <div class="panel-body" id="alterPanel">
@@ -10,7 +7,7 @@
             <c:forEach var="entry" items="${courses}" varStatus="theCount">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form method="post" action="alterItemServlet.do"
+                        <form method="post" action="/orderBook.do/update"
                               id="alterForm${theCount.count}">
                             <div class="panel panel-default">
                                 <div class="panel-heading">

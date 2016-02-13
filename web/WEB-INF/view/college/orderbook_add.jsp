@@ -1,13 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:include page="/teacherViewAddBookForm.do"></jsp:include>
 <div class="row">
     <div class="panel panel-default">
         <div class="panel-body">
             <!--item-->
             <div class="row">
                 <div class="col-lg-12">
-                    <form method="post" action="addItemServlet.do">
+                    <form method="post" action="/orderBook.do/add">
                         <div id="panelContainer">
                             <div>
                                 <div class="panel panel-default">
@@ -16,7 +15,7 @@
                                             <div class="col-lg-4 col-md-4">
                                                 <select class="form-control" name="form1"
                                                         style="font-size: 14px;">
-                                                    <c:forEach var="item" items="${selectedCourse}">
+                                                    <c:forEach var="item" items="${selectedCourseList}">
                                                         <option>${item}</option>
                                                     </c:forEach>
                                                 </select></div>

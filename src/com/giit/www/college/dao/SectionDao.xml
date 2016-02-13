@@ -7,6 +7,7 @@
 <mapper namespace="com.giit.www.college.dao.SectionDao">
 
     <resultMap id="sec_map" type="Section">
+        <result property="secId" column="sec_id"/>
         <result property="courseTitle" column="course_title"/>
         <result property="year" column="year"/>
         <result property="staffId" column="staff_id"/>
@@ -28,8 +29,8 @@
 
     <select id="findAllCustom" resultMap="sec_custom_map">
         SELECT section.sec_id,course_title,year,staff_name,time,week,weeks,classroom FROM section
-        INNER JOIN staff ON section.sec_id = staff.staff_id
-        INNER JOIN timetable ON section.sec_id = timetable.sec_id
+        INNER JOIN staff ON section.staff_id = staff.staff_id
+        LEFT JOIN timetable ON section.sec_id = timetable.sec_id
     </select>
 
     <insert id="add" parameterType="Section">
