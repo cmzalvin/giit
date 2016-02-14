@@ -28,27 +28,12 @@
                                 </select>
 
                                 <label>授课老师</label>
-                                <select class="form-control" name="teacherName">
-                                    <c:forEach var="teacherName" items="${teacherNameList}">
-                                        <option>${teacherName}</option>
+                                <select class="form-control" name="staffId">
+                                    <c:forEach var="staff" items="${staffList}">
+                                        <option value="${staff.staffId}">${staff.staffName}</option>
                                     </c:forEach>
                                 </select>
-                                <label>周次(输入格式1,2,3,4,5,6,7)</label>
-                                <input class="form-control" name="weeks">
-                                <label>星期</label>
-                                <select class="form-control" name="week">
-                                    <option>星期一</option>
-                                    <option>星期二</option>
-                                    <option>星期三</option>
-                                    <option>星期四</option>
-                                    <option>星期五</option>
-                                    <option>星期六</option>
-                                    <option>星期天</option>
-                                </select>
-                                <label>节次(输入格式1,2,3,4,5,6,7)</label>
-                                <input class="form-control" name="time">
-                                <label>教室</label>
-                                <input class="form-control" name="classroom">
+
                                 <label>可选课人数</label>
                                 <input class="form-control" name="limit">
                                 <label>开设时间</label>

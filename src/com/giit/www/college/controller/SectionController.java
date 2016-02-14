@@ -20,17 +20,15 @@ public class SectionController {
     @RequestMapping("section.view")
     public String sectionView(Model m) {
         m.addAttribute("sectionList", sectionBiz.findAllCustom());
-
         return "/college/section";
     }
 
     @RequestMapping("section_add.view")
     public String sectionAddView(Model m) {
         m.addAttribute("courseTitleList", sectionBiz.findAllCourseTitle());
-        m.addAttribute("teacherNameList", sectionBiz.findAllTeacherName());
+        m.addAttribute("staffList", sectionBiz.findAllStaff());
         return "/college/section_add";
     }
-
 
     @RequestMapping("add")
     public String add(Section section) {
@@ -38,6 +36,7 @@ public class SectionController {
         return "redirect:section.view";
     }
 
+    //TODO 1.这里需要事务管理
     @RequestMapping("delete")
     public String delete(int sectionId) {
         sectionBiz.delete(sectionId);

@@ -15,20 +15,20 @@
     <title>桂林电子科技大学教材订购系统</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
+    <link href="/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
           rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you util the page via file:// -->
@@ -79,7 +79,7 @@
                 <ul class="nav" id="side-menu">
 
                     <li>
-                        <a href="teacher_view.jsp"><i class="fa fa-book fa-fw"></i> 增改教材</a>
+                        <a href="orderbook.jsp"><i class="fa fa-book fa-fw"></i> 增改教材</a>
                     </li>
                 </ul>
             </div>
@@ -95,12 +95,12 @@
                 <h1 class="page-header">已添加教材</h1>
             </div>
             <div class="row" id="addedBookContainer">
-                <jsp:include page="teacher_view_addedBookForm.jsp"></jsp:include>
+                <jsp:include page="orderbook_added.jsp"></jsp:include>
             </div>
             <div>
                 <h1 class="page-header">添加教材</h1>
             </div>
-            <jsp:include page="teacher_view_addBookForm.jsp"></jsp:include>
+            <jsp:include page="orderbook_add.jsp"></jsp:include>
         </div>
 
         <!-- /.container-fluid -->
@@ -115,7 +115,7 @@
                 <div class="col-lg-4 col-md-4">
                     <select class="form-control" name="form"
                             style="font-size: 14px;">
-                        <c:forEach var="item" items="${selectedCourse}">
+                        <c:forEach var="item" items="${selectedCourseList}">
                             <option>${item}</option>
                         </c:forEach>
                     </select></div>
@@ -191,20 +191,20 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="dist/js/sb-admin-2.js"></script>
+<script src="/dist/js/sb-admin-2.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-<script src="bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+<script src="/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
     $(document).ready(function () {
@@ -250,7 +250,7 @@
             alterItemRequest.onreadystatechange = function () {
                 if (alterItemRequest.readyState == 4 && alterItemRequest.status == 200) {
                     var refreshFormRequest = new XMLHttpRequest();
-                    refreshFormRequest.open("GET", "teacher_view_addedBookForm.jsp", true);
+                    refreshFormRequest.open("GET", "orderbook_added.jsp", true);
                     refreshFormRequest.send();
                     refreshFormRequest.onreadystatechange = function () {
                         if (refreshFormRequest.readyState == 4 && refreshFormRequest.status == 200) {

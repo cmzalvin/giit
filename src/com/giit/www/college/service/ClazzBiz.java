@@ -15,4 +15,8 @@ public interface ClazzBiz {
     public List<Class> findAll();
 
     public List<DeptAndSpec> findDeptAndSpec();
+
+    public String findDeptAndSpecJson();
+
+    public List<String> findDeptNameList();
 }

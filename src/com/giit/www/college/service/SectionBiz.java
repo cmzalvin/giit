@@ -1,6 +1,7 @@
 package com.giit.www.college.service;
 
 import com.giit.www.entity.Section;
+import com.giit.www.entity.Staff;
 import com.giit.www.entity.custom.SectionCustom;
 
 import java.util.List;
@@ -17,5 +18,5 @@ public interface SectionBiz {
 
     public List<String> findAllCourseTitle();
 
-    public List<String> findAllTeacherName();
+    public List<Staff> findAllStaff();
 }

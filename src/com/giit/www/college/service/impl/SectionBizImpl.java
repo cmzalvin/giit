@@ -5,6 +5,7 @@ import com.giit.www.college.dao.SectionDao;
 import com.giit.www.college.dao.StaffDao;
 import com.giit.www.college.service.SectionBiz;
 import com.giit.www.entity.Section;
+import com.giit.www.entity.Staff;
 import com.giit.www.entity.custom.SectionCustom;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,7 @@ public class SectionBizImpl implements SectionBiz {
     @Override
     public void add(Section section) {
         sectionDao.add(section);
+
     }
 
     @Override
@@ -44,9 +46,10 @@ public class SectionBizImpl implements SectionBiz {
         return courseDao.findAllCourseTitle();
     }
 
+
     @Override
-    public List<String> findAllTeacherName() {
-        return staffDao.findAllName();
+    public List<Staff> findAllStaff() {
+        return staffDao.findAll();
     }
 
 
