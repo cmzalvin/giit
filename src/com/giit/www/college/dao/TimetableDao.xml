@@ -10,7 +10,7 @@
         INSERT INTO timetable(sec_id,time,week,weeks,classroom) VALUES(#{secId},#{time},#{week},#{weeks},#{classroom})
     </insert>
 
-    <delete id="delete" parameterType="String">
-        DELETE FROM staff WHERE staff_id = #{value}
+    <delete id="delete" parameterType="int">
+        DELETE FROM timetable WHERE sec_id = #{value}
     </delete>
 </mapper>

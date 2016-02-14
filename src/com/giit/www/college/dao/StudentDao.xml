@@ -28,22 +28,21 @@
         )
         VALUES
         (
-        studentId,
-        studentName,
-        idCard,
-        year,
-        className,
-        telephoneNumber,
-        studentOriginBase,
-        gender,
-        photo
-        )
+        #{studentId},
+        #{studentName},
+        #{idCard},
+        #{year},
+        #{className},
+        #{telephoneNumber},
+        #{studentOriginBase},
+        #{gender},
+        #{photo})
     </insert>
     <delete id="delete" parameterType="int">
         DELETE FROM student WHERE student_id = #{value}
     </delete>
 
-    <update id="update" parameterType="int">
+    <update id="update" parameterType="Student">
         UPDATE student
         SET student_name = #{studentName},id_card = #{IdCard},
         year = #{year},class_name = #{className},telephone_number = #{telephoneNumber},

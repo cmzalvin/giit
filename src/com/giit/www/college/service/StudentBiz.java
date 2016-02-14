@@ -12,4 +12,8 @@ public interface StudentBiz {
     public List<Student> studentView();
 
     public void add(Student student);
+
+    public void update(Student student);
+
+    public void delete(int studentId);
 }

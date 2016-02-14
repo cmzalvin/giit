@@ -2,6 +2,7 @@ package com.giit.www.college.dao;
 
 import com.giit.www.entity.Section;
 import com.giit.www.entity.custom.SectionCustom;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -16,4 +17,6 @@ public interface SectionDao {
     public void delete(int sectionId);
 
     public void add(Section section);
+
+    public List<String> findSelectedCourseTitle(@Param("staffId") String staffId, @Param("year") String year);
 }

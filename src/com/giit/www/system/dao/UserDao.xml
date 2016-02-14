@@ -28,6 +28,10 @@
         INSERT INTO user(user_id,password,hash,authority) VALUES(#{userId},#{password},#{hash},#{authority})
     </insert>
 
+    <select id="findByIdAndPassword" parameterType="map" resultMap="user_map">
+        SELECT * FROM user WHERE user_id = #{id} AND  password = #{password}
+    </select>
+
     <delete id="delete" parameterType="String">
         DELETE FROM user WHERE user_id = #{value}
     </delete>

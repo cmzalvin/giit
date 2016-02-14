@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.giit.www.college.dao.BookDao">
+
+    <resultMap id="book_map" type="Book">
+        <id property="clazzId" column="class_id"/>
+        <result property="clazzName" column="class_name"/>
+        <result property="year" column="year"/>
+        <result property="specName" column="spec_name"/>
+    </resultMap>
+
+    <select id="findSelctedCourse" parameterType="map" resultType="String">
+        SELECT DISTINCT course_title FROM section WHERE staff_id = #{staffId} AND year = #{year};
+    </select>
+
+    <insert id="add" parameterType="Book">
+        INSERT INTO book(book_title,isbn,data_of_printing,author,press,category,unit_price) VALUES
+        (
+        bookTitle,
+        isbn,
+        dataOfPrinting,
+        author,
+        press,
+        category,
+        unitPrice,
+        )
+    </insert>
+</mapper>

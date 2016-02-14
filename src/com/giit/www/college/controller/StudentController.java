@@ -1,6 +1,7 @@
 package com.giit.www.college.controller;
 
 import com.giit.www.college.service.StudentBiz;
+import com.giit.www.entity.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,17 +22,36 @@ public class StudentController {
     public String studentView(Model m) {
         //TODO 将biz命名为和业务有关的函数方法,不知道是否正确留个吭
         m.addAttribute("studentList", studentBiz.studentView());
-        return "/college/student";
+        return "/admin/college/student";
     }
 
     @RequestMapping("student_add.view")
     public String studentAddView(Model m) {
 
-        return "/college/student_add";
+        return "/admin/college/student_add";
+    }
+
+    @RequestMapping("student_update.view")
+    public String studentUpdateView(Model m) {
+
+        return "/admin/college/student_update";
     }
 
     @RequestMapping("student_elective.view")
     public String studentElectiveView() {
-        return "/college/student_elective";
+        return "/student/elective";
     }
+
+    @RequestMapping("add")
+    public String add(Model m, Student student) {
+        studentBiz.add(student);
+        return "/student.do/student.view";
+    }
+
+    @RequestMapping("delete")
+    public String delete(Model m, int studentId) {
+        studentBiz.delete(studentId);
+        return "/student.do/student.view";
+    }
+
 }

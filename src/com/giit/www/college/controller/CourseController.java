@@ -20,13 +20,13 @@ public class CourseController {
     @RequestMapping("course.view")
     private String courseView(Model m) {
         m.addAttribute("courseList", courseBiz.findAll());
-        return "/college/course";
+        return "/admin/college/course";
     }
 
     @RequestMapping("course_add.view")
     private String courseAddView(Model m) {
         m.addAttribute("specNameList", courseBiz.findAllSpecName());
-        return "/college/course_add";
+        return "/admin/college/course_add";
     }
 
     @RequestMapping("add")
