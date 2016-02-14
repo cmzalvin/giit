@@ -25,14 +25,19 @@ public class UserController {
     @RequestMapping("user.view")
     public String userView(Model m) {
         m.addAttribute("userList", userBiz.findAll());
-        return "system/userinfo/user";
+        return "/admin/system/userinfo/user";
+    }
+
+    @RequestMapping("user_add.view")
+    public String userAddView(Model m) {
+        return "/admin/system/userinfo/user_add";
     }
 
     @RequestMapping("findById")
     public String findById(String id, Model m) {
         //todo 这里要做非空判断
         m.addAttribute("user", userBiz.findById(id));
-        return "system/userinfo/user_update";
+        return "/admin/system/userinfo/user_update";
     }
 
     @RequestMapping("update")

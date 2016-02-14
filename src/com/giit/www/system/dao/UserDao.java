@@ -1,6 +1,7 @@
 package com.giit.www.system.dao;
 
 import com.giit.www.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,4 +18,6 @@ public interface UserDao {
     public void add(User user);
 
     public void delete(String id);
+
+    public User findByIdAndPassword(@Param("id") String username, @Param("password") String password);
 }

@@ -33,13 +33,13 @@ public class ClazzController {
     @RequestMapping("clazz.view")
     public String findAll(Model m) {
         m.addAttribute("clazzList", clazzBiz.findAll());
-        return "/college/clazz";
+        return "/admin/college/clazz";
     }
 
     @RequestMapping("clazz_add.view")
     public String findDeptAndSpec(Model m) {
         m.addAttribute("deptAndSpecJson", clazzBiz.findDeptAndSpecJson());
         m.addAttribute("deptNameList", clazzBiz.findDeptNameList());
-        return "/college/clazz_add";
+        return "/admin/college/clazz_add";
     }
 }

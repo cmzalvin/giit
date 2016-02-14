@@ -24,4 +24,14 @@ public class StudentBizImpl implements StudentBiz {
         studentDao.add(student);
     }
 
+    @Override
+    public void update(Student student) {
+        studentDao.update(student);
+    }
+
+    @Override
+    public void delete(int studentId) {
+        studentDao.delete(studentId);
+    }
+
 }

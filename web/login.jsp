@@ -45,13 +45,13 @@
                     <h3 class="panel-title">请登录</h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form" action="loginServlet.do" method="post">
+                    <form role="form" action="/login.do/login" method="post">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="账户名" name="id" autofocus>
+                                <input class="form-control" placeholder="账户名" name="username" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="密码" name="password" type="password" value="">
+                                <input class="form-control" placeholder="密码" name="password" type="password">
                             </div>
                             <div class="checkbox">
                                 <label>
