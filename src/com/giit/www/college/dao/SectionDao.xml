@@ -23,8 +23,8 @@
         </collection>
     </resultMap>
 
-    <select id="findSelectedCourseTitle" parameterType="map" resultType="String">
-        SELECT course_title FROM section WHERE staff_id = #{staffId} AND year = #{year}
+    <select id="findSelectedSection" parameterType="map" resultMap="sec_map">
+        SELECT sec_id,course_title FROM section WHERE staff_id = #{staffId} AND year = #{year}
     </select>
 
     <select id="findAll" resultMap="sec_map">

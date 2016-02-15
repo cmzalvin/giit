@@ -77,10 +77,10 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="/"> 个人信息</a>
+                        <a href="#"> 个人信息</a>
                     </li>
                     <li>
-                        <a href="/"> 成绩录入</a>
+                        <a href="#"> 成绩录入</a>
                     </li>
                     <li>
                         <a href="/orderbook.do/orderbook.view"> 教材添加</a>

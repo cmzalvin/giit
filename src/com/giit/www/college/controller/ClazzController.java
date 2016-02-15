@@ -1,6 +1,7 @@
 package com.giit.www.college.controller;
 
 import com.giit.www.college.service.ClazzBiz;
+import com.giit.www.util.TermContainer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,6 +41,7 @@ public class ClazzController {
     public String findDeptAndSpec(Model m) {
         m.addAttribute("deptAndSpecJson", clazzBiz.findDeptAndSpecJson());
         m.addAttribute("deptNameList", clazzBiz.findDeptNameList());
+        m.addAttribute("termList", TermContainer.getTermList());
         return "/admin/college/clazz_add";
     }
 }

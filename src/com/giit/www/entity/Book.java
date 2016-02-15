@@ -11,7 +11,7 @@ public class Book {
     String author;
     String press;
     String category;
-    String unitPrice;
+    Short unitPrice;
 
     public String getBookTitle() {
         return bookTitle;
@@ -61,11 +61,11 @@ public class Book {
         this.category = category;
     }
 
-    public String getUnitPrice() {
+    public Short getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(String unitPrice) {
+    public void setUnitPrice(Short unitPrice) {
         this.unitPrice = unitPrice;
     }
 }

@@ -18,5 +18,7 @@ public interface SectionDao {
 
     public void add(Section section);
 
-    public List<String> findSelectedCourseTitle(@Param("staffId") String staffId, @Param("year") String year);
+    public List<Section> findSelectedSection(@Param("staffId") String staffId, @Param("year") String year);
+
+    int getSecId(String item, String s);
 }
