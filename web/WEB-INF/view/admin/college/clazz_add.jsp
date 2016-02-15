@@ -33,10 +33,9 @@
                                 </select>
                                 <label>开设年份</label>
                                 <select class="form-control" name="year">
-                                    <option>2016</option>
-                                    <option>2015</option>
-                                    <option>2014</option>
-                                    <option>2013</option>
+                                    <c:forEach var="term" items="${termList}">
+                                        <option value="${term.val}">${term.text}</option>
+                                    </c:forEach>
                                 </select>
                                 <%--<select class="form-control" name="departmentName">--%>
                                 <%--<c:forEach var="speciality" items="${speclities}">--%>

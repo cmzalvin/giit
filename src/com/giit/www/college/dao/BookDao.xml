@@ -6,27 +6,16 @@
 
 <mapper namespace="com.giit.www.college.dao.BookDao">
 
-    <resultMap id="book_map" type="Book">
-        <id property="clazzId" column="class_id"/>
-        <result property="clazzName" column="class_name"/>
-        <result property="year" column="year"/>
-        <result property="specName" column="spec_name"/>
-    </resultMap>
+    <insert id="add" parameterType="Book">
+        INSERT INTO book(book_title,isbn,data_of_printing,author,press,category,unit_price)
+        VALUES(#{bookTitle},#{isbn},#{dataOfPrinting},#{author},#{press},#{category},#{unitPrice})
+    </insert>
 
-    <select id="findSelctedCourse" parameterType="map" resultType="String">
-        SELECT DISTINCT course_title FROM section WHERE staff_id = #{staffId} AND year = #{year};
+    <select id="find" parameterType="map" resultType="Book">
+        SELECT * FROM book WHERE book_title = #{bookTitle} AND isbn = #{isbn}
     </select>
 
-    <insert id="add" parameterType="Book">
-        INSERT INTO book(book_title,isbn,data_of_printing,author,press,category,unit_price) VALUES
-        (
-        bookTitle,
-        isbn,
-        dataOfPrinting,
-        author,
-        press,
-        category,
-        unitPrice,
-        )
-    </insert>
+    <delete id="delete" parameterType="map">
+        DELETE FROM book WHERE book_title = #{bookTitle} AND isbn = #{isbn}
+    </delete>
 </mapper>

@@ -66,6 +66,7 @@ public class ClazzBizImpl implements ClazzBiz {
     }
 
     //TODO 在这里感觉不应该查询两次应该使用上面的结果keyset,磁盘的开销远大于运算,如果开一个deptAndSpecList变量存储这个变量是线程安全的么,留坑= =！
+    //感觉这里应该是取决于biz的BEAN在spring中的作用域
     @Override
     public List<String> findDeptNameList() {
         return deptDao.findAllDeptName();

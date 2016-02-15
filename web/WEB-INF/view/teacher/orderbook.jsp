@@ -30,8 +30,8 @@
                 <div class="col-lg-4 col-md-4">
                     <select class="form-control" name="form"
                             style="font-size: 14px;">
-                        <c:forEach var="item" items="${selectedCourseList}">
-                            <option>${item}</option>
+                        <c:forEach var="section" items="${selectedSectionList}">
+                            <option value="${section.secId}">${section.courseTitle}</option>
                         </c:forEach>
                     </select></div>
                 <div class="col-lg-4 col-md-4"></div>
@@ -138,7 +138,7 @@
             for (var i = 0; i < changedItems.length; i++) {
                 var item = changedItems[i].children;
                 var newValue = item.newValue;
-                form.changedInfo.alter.push({
+                form.changedInfo.alterItemList.push({
                     "bookTitle": item[0].firstElementChild.defaultValue,
                     "isbn": item[1].firstElementChild.defaultValue,
                     "dateOfPrinting": item[2].firstElementChild.defaultValue,
@@ -157,15 +157,17 @@
                     "newRemark": item[7].firstElementChild.newValue
                 });
             }
-            form.changedInfo.course = btn.form[0].value;
+            form.changedInfo.secId = btn.form[0].value;
             var alterItemRequest = new XMLHttpRequest();
-            alterItemRequest.open("POST", "alterItemServlet.do", true);
+
+            alterItemRequest.open("POST", "/orderbook.do/update", true);
+            alterItemRequest.setRequestHeader("Content-type", "application/json");
             alterItemRequest.send(JSON.stringify(form.changedInfo));
 
             alterItemRequest.onreadystatechange = function () {
                 if (alterItemRequest.readyState == 4 && alterItemRequest.status == 200) {
                     var refreshFormRequest = new XMLHttpRequest();
-                    refreshFormRequest.open("GET", "teacher_view_addedBookForm.jsp", true);
+                    refreshFormRequest.open("GET", "/orderbook.do/orderbook_added.view", true);
                     refreshFormRequest.send();
                     refreshFormRequest.onreadystatechange = function () {
                         if (refreshFormRequest.readyState == 4 && refreshFormRequest.status == 200) {
@@ -178,9 +180,9 @@
 
             form.changedInfo =
             {
-                "course": "",
-                "alter": [],
-                "delete": []
+                "secId": "",
+                "alterItemList": [],
+                "deleteItemList": []
             }
             var children = form.getElementsByTagName("input");
             var select = form.getElementsByTagName("select");
@@ -210,7 +212,7 @@
         var tbodyNode = trNode.parentNode;
         var items = btn.parentNode.parentNode.children;
 
-        btn.form.changedInfo.delete.push({
+        btn.form.changedInfo.deleteItemList.push({
             "bookTitle": items[0].firstElementChild.value,
             "isbn": items[1].firstElementChild.value,
             "dateOfPrinting": items[2].firstElementChild.value,

@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:if test="${courses != null}">
+<c:if test="${addedBookInfoList != null}">
     <div class="panel panel-default">
         <div class="panel-body" id="alterPanel">
             <!--item-->
-            <c:forEach var="entry" items="${courses}" varStatus="theCount">
+            <c:forEach var="item" items="${addedBookInfoList}" varStatus="theCount">
                 <div class="row">
                     <div class="col-lg-12">
                         <form method="post" action="/orderBook.do/update"
@@ -15,7 +15,7 @@
                                         <div class="col-lg-4 col-md-4">
                                             <select class="form-control"
                                                     style="font-size: 14px;">
-                                                <option>${entry.key}</option>
+                                                <option value="${item.secId}">${item.courseTitle}</option>
                                             </select></div>
                                         <div class="col-lg-4 col-md-4"></div>
                                         <div class="col-lg-4 col-md-4"></div>
@@ -38,36 +38,36 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <c:forEach var="book" items="${entry.value}">
+                                            <c:forEach var="bookInfo" items="${item.bookInfoList}">
                                                 <tr>
                                                     <td class="col-md-2">
                                                         <input type="text" class="form-control"
-                                                               value="${book[0]}"
+                                                               value="${bookInfo.bookTitle}"
                                                                disabled="disabled"
                                                                onchange="addNewValue(this)">
                                                     </td>
                                                     <td class="col-md-3">
                                                         <input type="text" class="form-control"
-                                                               value="${book[1]}"
+                                                               value="${bookInfo.isbn}"
                                                                disabled="disabled"
                                                                onchange="addNewValue(this)">
                                                     </td>
                                                     <td class="col-md-1">
                                                         <input type="text" class="form-control"
 
-                                                               value="${book[2]}"
+                                                               value="${bookInfo.dataOfPrinting}"
                                                                disabled="disabled"
                                                                onchange="addNewValue(this)">
                                                     </td>
                                                     <td class="col-md-1">
                                                         <input type="text" class="form-control"
-                                                               value="${book[3]}"
+                                                               value="${bookInfo.author}"
                                                                disabled="disabled"
                                                                onchange="addNewValue(this)">
                                                     </td>
                                                     <td class="col-md-2">
                                                         <input type="text" class="form-control"
-                                                               value="${book[4]}"
+                                                               value="${bookInfo.press}"
                                                                disabled="disabled"
                                                                onchange="addNewValue(this)">
                                                     </td>
@@ -76,29 +76,29 @@
                                                                 style="min-width: 60px"
                                                                 disabled="disabled"
                                                                 onchange="addNewValue(this)">
-                                                            <option  ${book[5] == 'A' ? 'selected' : ''}>
+                                                            <option  ${bookInfo.category == 'A' ? 'selected' : ''}>
                                                                 A
                                                             </option>
-                                                            <option  ${book[5] == 'B' ? 'selected' : ''}>
+                                                            <option  ${bookInfo.category == 'B' ? 'selected' : ''}>
                                                                 B
                                                             </option>
-                                                            <option  ${book[5] == 'C' ? 'selected' : ''}>
+                                                            <option  ${bookInfo.category == 'C' ? 'selected' : ''}>
                                                                 C
                                                             </option>
-                                                            <option  ${book[5] == 'D' ? 'selected' : ''}>
+                                                            <option  ${bookInfo.category == 'D' ? 'selected' : ''}>
                                                                 D
                                                             </option>
                                                         </select>
                                                     </td>
                                                     <td class="col-md-1">
                                                         <input type="number" class="form-control"
-                                                               value="${book[6]}"
+                                                               value="${bookInfo.unitPrice}"
                                                                disabled="disabled"
                                                                onchange="addNewValue(this)">
                                                     </td>
                                                     <td class="col-md-1">
                                                         <input type="text" class="form-control"
-                                                               value="${book[7]}"
+                                                               value="${bookInfo.remark}"
                                                                disabled="disabled"
                                                                onchange="addNewValue(this)">
                                                     </td>

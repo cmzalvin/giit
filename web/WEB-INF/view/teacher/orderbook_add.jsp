@@ -15,8 +15,8 @@
                                             <div class="col-lg-4 col-md-4">
                                                 <select class="form-control" name="form1"
                                                         style="font-size: 14px;">
-                                                    <c:forEach var="item" items="${selectedCourseList}">
-                                                        <option>${item}</option>
+                                                    <c:forEach var="section" items="${selectedSectionList}">
+                                                        <option value="${section.secId}">${section.courseTitle}</option>
                                                     </c:forEach>
                                                 </select></div>
                                             <div class="col-lg-4 col-md-4"></div>
