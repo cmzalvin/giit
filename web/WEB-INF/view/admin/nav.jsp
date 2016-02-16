@@ -86,7 +86,7 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> 学院管理<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/admin.do/admin.view"> 整体概况</a>
+                                <a href="/"> 整体概况</a>
                             </li>
                             <li>
                                 <a href="/dept.do/dept.view"> 系部设置</a>

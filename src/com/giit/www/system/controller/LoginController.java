@@ -21,7 +21,7 @@ public class LoginController {
     @RequestMapping("login")
     public String login(HttpSession session, String username, String password) {
         User user;
-        user = accountBiz.login(username, password);
+        user = accountBiz.findByIdAndPassword(username, password);
         if (user != null) {
             session.setAttribute("username", username);
             String authority = user.getAuthority();
