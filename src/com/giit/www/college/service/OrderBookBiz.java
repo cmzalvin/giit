@@ -20,7 +20,7 @@ public interface OrderBookBiz {
 
     public void update(ChangedItems changedItems, String staffId);
 
-    public void audit();
+    public void audit(List<OrderBookReviewVo> orderBookReviewVoList);
 
     public List<OrderBookReviewVo> findAllNotReviewedBook();
 }

@@ -91,7 +91,8 @@ public class OrderBookBizImpl implements OrderBookBiz {
                 orderBook.setApproval(false);
 
                 orderBookDao.add(orderBook);
-                bookDao.add(book);
+                if (bookDao.find(bookTitle, isbn) == null)
+                    bookDao.add(book);
 
             }
         }
@@ -175,8 +176,15 @@ public class OrderBookBizImpl implements OrderBookBiz {
     }
 
     @Override
-    public void audit() {
-
+    public void audit(List<OrderBookReviewVo> orderBookReviewVoList) {
+        Iterator iterator = orderBookReviewVoList.iterator();
+        while (iterator.hasNext()) {
+            OrderBookReviewVo orderBookReviewVo = (OrderBookReviewVo) iterator.next();
+            int secId = orderBookReviewVo.getSecId();
+            String bookTitle = orderBookReviewVo.getBookTitle();
+            String isbn = orderBookReviewVo.getIsbn();
+            orderBookDao.audit(secId, bookTitle, isbn);
+        }
     }
 
     @Override

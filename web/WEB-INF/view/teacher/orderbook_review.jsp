@@ -18,7 +18,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-                                <form>
+                                <form method="post" action="/orderbook.do/audit">
                                     <table class="table table-hover"
                                            id="dataTables-example">
                                         <thead>
@@ -52,10 +52,10 @@
                                                 <td>${orderBookReviewVo.remark}</td>
                                             </tr>
                                         </c:forEach>
+
                                         </tbody>
                                     </table>
-                                    <button type="button" class="btn btn-warning" id="btn_alter"
-                                            onclick="changeBtnText()">审核
+                                    <button type="submit" class="btn btn-warning" id="btn_alter">审核
                                     </button>
                                 </form>
                             </div>
@@ -78,6 +78,5 @@
 <!-- /#wrapper -->
 </div>
 <!-- /#wrapper -->
-
 <jsp:include page="/bottom.jsp"></jsp:include>
 

@@ -32,7 +32,16 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-
+                                        <c:forEach var="reviewedBook" items="${reviewedBookList}">
+                                            <tr>
+                                                <td>${reviewedBook.bookTitle}</td>
+                                                <td>${reviewedBook.isbn}</td>
+                                                <td>${reviewedBook.dateOfPrinting}</td>
+                                                <td>${reviewedBook.author}</td>
+                                                <td>${reviewedBook.press}</td>
+                                                <td>${reviewedBook.amount}</td>
+                                            </tr>
+                                        </c:forEach>
 
                                         </tbody>
                                     </table>
