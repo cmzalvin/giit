@@ -7,6 +7,7 @@
 <mapper namespace="com.giit.www.college.dao.OrderBookDao">
 
     <resultMap id="orderBookReviewVo" type="OrderBookReviewVo">
+        <result property="secId" column="sec_id"/>
         <result property="speciality" column="speciality"/>
         <result property="courseTitle" column="course_title"/>
         <result property="bookTitle" column="book_title"/>
@@ -50,7 +51,7 @@
     </select>
 
     <select id="findAllNotReviewedBook" resultMap="orderBookReviewVo">
-        SELECT speciality,course.course_title,book.isbn,book.book_title,
+        SELECT section.sec_id,speciality,course.course_title,book.isbn,book.book_title,
         date_of_printing,author,press,category,unit_price,remark
         FROM order_book
         INNER JOIN book ON order_book.isbn = book.isbn AND order_book.book_title = book.book_title

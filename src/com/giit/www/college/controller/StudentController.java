@@ -36,12 +36,6 @@ public class StudentController {
 
         return "/admin/college/student_update";
     }
-
-    @RequestMapping("student_elective.view")
-    public String studentElectiveView() {
-        return "/student/elective";
-    }
-
     @RequestMapping("add")
     public String add(Model m, Student student) {
         studentBiz.add(student);

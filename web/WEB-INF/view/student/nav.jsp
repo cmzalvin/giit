@@ -86,7 +86,7 @@
                         <a href="/"> 课表</a>
                     </li>
                     <li>
-                        <a href="/student.do/student_elective.view"> 选课</a>
+                        <a href="/elective.do/elective.view"> 选课</a>
                     </li>
 
                 </ul>

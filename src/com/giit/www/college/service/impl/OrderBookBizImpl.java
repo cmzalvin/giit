@@ -190,7 +190,7 @@ public class OrderBookBizImpl implements OrderBookBiz {
             temp.setStdCount(stdCount);
         }
 
-        return orderBookDao.findAllNotReviewedBook();
+        return orderBookReviewVoList;
     }
 
 }

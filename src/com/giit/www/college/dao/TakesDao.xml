@@ -10,4 +10,11 @@
         SELECT count(student_id) FROM takes WHERE sec_id = #{value}
     </select>
 
+    <insert id="add" parameterType="map">
+        INSERT INTO takes(student_id,sec_Id) VALUES(#{stdId},#{secId})
+    </insert>
+
+    <delete id="delete" parameterType="map">
+        DELETE FROM takes WHERE student_id = #{stdId} AND sec_id = #{secId}
+    </delete>
 </mapper>
