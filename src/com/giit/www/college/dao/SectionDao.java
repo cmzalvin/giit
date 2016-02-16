@@ -21,4 +21,6 @@ public interface SectionDao {
     public List<Section> findSelectedSection(@Param("staffId") String staffId, @Param("year") String year);
 
     int getSecId(String item, String s);
+
+    public List<Section> findAll();
 }

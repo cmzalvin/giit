@@ -77,13 +77,16 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
+                        <a href="/main.do/student"> 主页</a>
+                    </li>
+                    <li>
                         <a href="/"> 个人信息</a>
                     </li>
                     <li>
                         <a href="/"> 课表</a>
                     </li>
                     <li>
-                        <a href="/student.do/student_elective.view"> 选课</a>
+                        <a href="/elective.do/elective.view"> 选课</a>
                     </li>
 
                 </ul>

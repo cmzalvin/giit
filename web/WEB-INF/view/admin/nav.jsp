@@ -77,7 +77,7 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="/admin/admin.jsp"><i class="fa fa-book fa-fw"></i> 控制面板</a>
+                        <a href="/main.do/admin"><i class="fa fa-book fa-fw"></i> 控制面板</a>
                     </li>
                     <li>
                         <a href="/user.do/user.view"><i class="fa fa-book fa-fw"></i> 用户管理</a>
@@ -86,7 +86,7 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> 学院管理<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/admin.do/admin.view"> 整体概况</a>
+                                <a href="/"> 整体概况</a>
                             </li>
                             <li>
                                 <a href="/dept.do/dept.view"> 系部设置</a>

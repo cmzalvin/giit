@@ -7,8 +7,8 @@
 <mapper namespace="com.giit.www.college.dao.BookDao">
 
     <insert id="add" parameterType="Book">
-        INSERT INTO book(book_title,isbn,data_of_printing,author,press,category,unit_price)
-        VALUES(#{bookTitle},#{isbn},#{dataOfPrinting},#{author},#{press},#{category},#{unitPrice})
+        INSERT INTO book(book_title,isbn,date_of_printing,author,press,category,unit_price)
+        VALUES(#{bookTitle},#{isbn},#{dateOfPrinting},#{author},#{press},#{category},#{unitPrice})
     </insert>
 
     <select id="find" parameterType="map" resultType="Book">

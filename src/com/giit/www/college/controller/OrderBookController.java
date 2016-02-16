@@ -3,6 +3,7 @@ package com.giit.www.college.controller;
 import com.giit.www.college.service.OrderBookBiz;
 import com.giit.www.entity.Section;
 import com.giit.www.entity.custom.ChangedItems;
+import com.giit.www.entity.custom.OrderBookReviewVo;
 import com.giit.www.entity.custom.OrderBookVo;
 import com.giit.www.util.TermContainer;
 import org.springframework.http.HttpStatus;
@@ -43,7 +44,9 @@ public class OrderBookController {
     }
 
     @RequestMapping("orderbook_review.view")
-    public String orderBookReviewView(Model m) {
+    public String orderBookReviewView(Model m, HttpSession session) {
+        //TODO 放到SESSION方便处理
+        session.setAttribute("notReviewedBookList", orderBookBiz.findAllNotReviewedBook());
         return "/teacher/orderbook_review";
     }
 
@@ -60,7 +63,6 @@ public class OrderBookController {
     }
 
 
-    //TODO 这里的数据提交没有回显,会给用户带来不便,如果设计是一个问题!!!
     @RequestMapping("add")
     public String add(HttpServletRequest request, HttpSession session) {
         Map map = request.getParameterMap();
@@ -75,5 +77,12 @@ public class OrderBookController {
     @ResponseStatus(value = HttpStatus.OK)
     public void update(@RequestBody ChangedItems changedItems, HttpSession session) {
         orderBookBiz.update(changedItems, (String) session.getAttribute("username"));
+    }
+
+    @RequestMapping("audit")
+    public String audit(HttpSession session) {
+        List<OrderBookReviewVo> orderBookReviewVoList = (List<OrderBookReviewVo>) session.getAttribute("notReviewedBookList");
+        orderBookBiz.audit(orderBookReviewVoList);
+        return "orderbook.do/orderbook_review.view"
     }
 }

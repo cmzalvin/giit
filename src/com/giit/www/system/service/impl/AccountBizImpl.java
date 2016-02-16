@@ -16,8 +16,14 @@ public class AccountBizImpl implements AccountBiz {
     @Resource
     UserDao userDao;
 
-    public User login(String username, String password) {
+    @Override
+    public User findByIdAndPassword(String username, String password) {
         return userDao.findByIdAndPassword(username, password);
+    }
 
+
+    @Override
+    public void updatePassword(String id, String password) {
+        userDao.updatePassword(id, password);
     }
 }

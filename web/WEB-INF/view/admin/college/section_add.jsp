@@ -38,8 +38,9 @@
                                 <input class="form-control" name="limit">
                                 <label>开设时间</label>
                                 <select class="form-control" name="year">
-                                    <option>20162</option>
-                                    <option>20161</option>
+                                    <c:forEach var="term" items="${termList}">
+                                        <option value="${term.val}">${term.text}</option>
+                                    </c:forEach>
                                 </select>
                                 <label></label>
                                 <button type="submit"

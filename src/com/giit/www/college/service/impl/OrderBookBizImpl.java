@@ -3,12 +3,14 @@ package com.giit.www.college.service.impl;
 import com.giit.www.college.dao.BookDao;
 import com.giit.www.college.dao.OrderBookDao;
 import com.giit.www.college.dao.SectionDao;
+import com.giit.www.college.dao.TakesDao;
 import com.giit.www.college.service.OrderBookBiz;
 import com.giit.www.entity.Book;
 import com.giit.www.entity.OrderBook;
 import com.giit.www.entity.Section;
 import com.giit.www.entity.custom.AddedBookVo;
 import com.giit.www.entity.custom.ChangedItems;
+import com.giit.www.entity.custom.OrderBookReviewVo;
 import com.giit.www.entity.custom.OrderBookVo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,6 +34,9 @@ public class OrderBookBizImpl implements OrderBookBiz {
 
     @Resource
     BookDao bookDao;
+
+    @Resource
+    TakesDao takesDao;
 
     public int ITEMNUM = 8;
 
@@ -71,7 +76,7 @@ public class OrderBookBizImpl implements OrderBookBiz {
                 Book book = new Book();
                 book.setBookTitle(bookTitle);
                 book.setIsbn(isbn);
-                book.setDataOfPrinting(dataOfPringting);
+                book.setDateOfPrinting(dataOfPringting);
                 book.setAuthor(author);
                 book.setPress(press);
                 book.setCategory(category);
@@ -83,9 +88,11 @@ public class OrderBookBizImpl implements OrderBookBiz {
                 orderBook.setStaffId(staffId);
                 orderBook.setRemark(remark);
                 orderBook.setSecId(secId);
+                orderBook.setApproval(false);
 
                 orderBookDao.add(orderBook);
-                bookDao.add(book);
+                if (bookDao.find(bookTitle, isbn) == null)
+                    bookDao.add(book);
 
             }
         }
@@ -134,7 +141,7 @@ public class OrderBookBizImpl implements OrderBookBiz {
             Book book = new Book();
             book.setBookTitle(newBookTitle);
             book.setIsbn(newIsbn);
-            book.setDataOfPrinting(newDateOfPrinting);
+            book.setDateOfPrinting(newDateOfPrinting);
             book.setAuthor(newAuthor);
             book.setPress(newPress);
             book.setCategory(newCategory);
@@ -166,6 +173,32 @@ public class OrderBookBizImpl implements OrderBookBiz {
                 bookDao.delete(bookTitle, isbn);
         }
 
+    }
+
+    @Override
+    public void audit(List<OrderBookReviewVo> orderBookReviewVoList) {
+        Iterator iterator = orderBookReviewVoList.iterator();
+        while (iterator.hasNext()) {
+            OrderBookReviewVo orderBookReviewVo = (OrderBookReviewVo) iterator.next();
+            int secId = orderBookReviewVo.getSecId();
+            String bookTitle = orderBookReviewVo.getBookTitle();
+            String isbn = orderBookReviewVo.getIsbn();
+            orderBookDao.audit(secId, bookTitle, isbn);
+        }
+    }
+
+    @Override
+    public List<OrderBookReviewVo> findAllNotReviewedBook() {
+        List<OrderBookReviewVo> orderBookReviewVoList = orderBookDao.findAllNotReviewedBook();
+        Iterator iterator = orderBookReviewVoList.iterator();
+        while (iterator.hasNext()) {
+            OrderBookReviewVo temp = (OrderBookReviewVo) iterator.next();
+            int secId = temp.getSecId();
+            int stdCount = takesDao.getStdCountInSection(secId);
+            temp.setStdCount(stdCount);
+        }
+
+        return orderBookReviewVoList;
     }
 
 }

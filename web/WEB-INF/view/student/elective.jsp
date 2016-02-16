@@ -23,21 +23,17 @@
                                     <th>课程ID</th>
                                     <th>课程名称</th>
                                     <th>授课老师</th>
-                                    <th>授课周次,星期,节次</th>
-                                    <th>上课教室</th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <c:forEach var="section" items="${sectionList}">
                                     <tr>
-                                        <td>${section.sectionId}</td>
+                                        <td>${section.secId}</td>
                                         <td>${section.courseTitle}</td>
                                         <td>${section.teacher}</td>
-                                        <td>${section.weeks}周 ${section.week} ${section.time}节</td>
-                                        <td>${section.classroom}</td>
                                         <td>
-                                            <a href="/elective.do?sectionId=${section.id}"
+                                            <a href="/elective.do/add?secId=${section.secId}"
                                                onclick="return confirm('是否选择该课')">选课</a>
                                         </td>
                                     </tr>

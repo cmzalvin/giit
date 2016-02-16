@@ -18,45 +18,24 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-                                <form method="post" action="/orderbook.do/audit">
+                                <form method="post" action="/">
                                     <table class="table table-hover"
                                            id="dataTables-example">
                                         <thead>
                                         <tr>
-                                            <th>专业</th>
-                                            <th>课程名称</th>
-                                            <th>书号</th>
                                             <th>书名</th>
+                                            <th>ISBN</th>
                                             <th>印刷日期</th>
                                             <th>作者</th>
                                             <th>出版社</th>
-                                            <th>教材类别</th>
-                                            <th>单价</th>
-                                            <th>学生数量</th>
-                                            <th>备注</th>
+                                            <th>数量</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach var="orderBookReviewVo" items="${notReviewedBookList}">
-                                            <tr>
-                                                <td>${orderBookReviewVo.speciality}</td>
-                                                <td>${orderBookReviewVo.courseTitle}</td>
-                                                <td>${orderBookReviewVo.isbn}</td>
-                                                <td>${orderBookReviewVo.bookTitle}</td>
-                                                <td>${orderBookReviewVo.dateOfPrinting}</td>
-                                                <td>${orderBookReviewVo.author}</td>
-                                                <td>${orderBookReviewVo.press}</td>
-                                                <td>${orderBookReviewVo.category}</td>
-                                                <td>${orderBookReviewVo.unitPrice}</td>
-                                                <td>${orderBookReviewVo.stdCount}</td>
-                                                <td>${orderBookReviewVo.remark}</td>
-                                            </tr>
-                                        </c:forEach>
+
 
                                         </tbody>
                                     </table>
-                                    <button type="submit" class="btn btn-warning" id="btn_alter">审核
-                                    </button>
                                 </form>
                             </div>
                         </div>

@@ -1,17 +1,22 @@
-package com.giit.www.entity;
+package com.giit.www.entity.custom;
+
+import java.util.List;
 
 /**
- * Created by c0de8ug on 16-2-9.
+ * Created by c0de8ug on 16-2-16.
  */
-public class Book {
-
+public class ReviewedBookVo {
     String bookTitle;
     String isbn;
     String dateOfPrinting;
     String author;
     String press;
-    String category;
-    Short unitPrice;
+    List<Integer> countList;
+    int amount;
+
+    public int getAmount() {
+        return amount;
+    }
 
     public String getBookTitle() {
         return bookTitle;
@@ -53,19 +58,15 @@ public class Book {
         this.press = press;
     }
 
-    public String getCategory() {
-        return category;
+    public List<Integer> getCountList() {
+        return countList;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCountList(List<Integer> countList) {
+        this.countList = countList;
     }
 
-    public Short getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(Short unitPrice) {
-        this.unitPrice = unitPrice;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }
