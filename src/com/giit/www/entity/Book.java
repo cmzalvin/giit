@@ -7,7 +7,7 @@ public class Book {
 
     String bookTitle;
     String isbn;
-    String dataOfPrinting;
+    String dateOfPrinting;
     String author;
     String press;
     String category;
@@ -29,12 +29,12 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public String getDataOfPrinting() {
-        return dataOfPrinting;
+    public String getDateOfPrinting() {
+        return dateOfPrinting;
     }
 
-    public void setDataOfPrinting(String dataOfPrinting) {
-        this.dataOfPrinting = dataOfPrinting;
+    public void setDateOfPrinting(String dateOfPrinting) {
+        this.dateOfPrinting = dateOfPrinting;
     }
 
     public String getAuthor() {

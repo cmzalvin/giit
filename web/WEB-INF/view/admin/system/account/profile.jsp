@@ -6,7 +6,7 @@
 <div id="page-wrapper">
     <div class="container-fluid">
         <div>
-            <h1 class="page-header">添加专业</h1>
+            <h1 class="page-header">个人信息</h1>
         </div>
         <div class="panel-heading">
         </div>
@@ -24,7 +24,7 @@
                                 <input class="form-control" name="password">
                                 <label></label>
                                 <button type="submit"
-                                        class="btn btn-primary form-control">添加
+                                        class="btn btn-primary form-control">修改
                                 </button>
                             </form>
                         </div>

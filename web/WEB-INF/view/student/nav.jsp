@@ -77,6 +77,9 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
+                        <a href="/main.do/student"> 主页</a>
+                    </li>
+                    <li>
                         <a href="/"> 个人信息</a>
                     </li>
                     <li>

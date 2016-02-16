@@ -6,6 +6,17 @@
 
 <mapper namespace="com.giit.www.college.dao.OrderBookDao">
 
+    <resultMap id="orderBookReviewVo" type="OrderBookReviewVo">
+        <result property="speciality" column="speciality"/>
+        <result property="courseTitle" column="course_title"/>
+        <result property="bookTitle" column="book_title"/>
+        <result property="isbn" column="isbn"/>
+        <result property="dateOfPrinting" column="date_of_printing"/>
+        <result property="author" column="author"/>
+        <result property="category" column="category"/>
+        <result property="unitPrice" column="unitPrice"/>
+        <result property="remark" column="remark"/>
+    </resultMap>
 
     <resultMap id="addedBookInfo" type="AddedBookVo">
         <result property="secId" column="sec_id"/>
@@ -23,12 +34,11 @@
     </resultMap>
 
     <insert id="add" parameterType="OrderBook">
-        INSERT INTO order_book(staff_id,sec_id,book_title,isbn,remark) VALUES(#{staffId},#{secId},#{bookTitle},#{isbn},#{remark})
+        INSERT INTO order_book(staff_id,sec_id,book_title,isbn,remark,approval) VALUES(#{staffId},#{secId},#{bookTitle},#{isbn},#{remark},#{approval})
     </insert>
 
-
     <select id="findAddedBookInfoList" parameterType="String" resultMap="addedBookInfo">
-        SELECT section.sec_id,section.course_title,book.isbn,book.book_title,data_of_printing,author,press,category,unit_price,remark
+        SELECT section.sec_id,section.course_title,book.isbn,book.book_title,date_of_printing,author,press,category,unit_price,remark
                 FROM order_book
                 INNER JOIN book ON order_book.book_title = book.book_title AND order_book.isbn = book.isbn
                 INNER JOIN section ON order_book.sec_id = section.sec_id
@@ -37,6 +47,16 @@
 
     <select id="usedByOtherSec" parameterType="map" resultType="int">
         SELECT count(*) FROM order_book WHERE book_title = #{bookTitle} AND isbn = #{isbn} AND sec_id != #{secId}
+    </select>
+
+    <select id="findAllNotReviewedBook" resultMap="orderBookReviewVo">
+        SELECT speciality,course.course_title,book.isbn,book.book_title,
+        date_of_printing,author,press,category,unit_price,remark
+        FROM order_book
+        INNER JOIN book ON order_book.isbn = book.isbn AND order_book.book_title = book.book_title
+        INNER JOIN section ON order_book.sec_id = section.sec_id
+        INNER JOIN course ON section.course_title = course.course_title
+        WHERE approval = 0
     </select>
 
     <delete id="delete" parameterType="map">

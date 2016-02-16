@@ -6,7 +6,7 @@
 <div id="page-wrapper">
     <div class="container-fluid">
         <div>
-            <h1 class="page-header">用户管理</h1>
+            <h1 class="page-header">学生主页</h1>
         </div>
         <div class="panel-heading">
         </div>

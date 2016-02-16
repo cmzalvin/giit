@@ -44,6 +44,7 @@ public class OrderBookController {
 
     @RequestMapping("orderbook_review.view")
     public String orderBookReviewView(Model m) {
+        m.addAttribute("notReviewedBookList", orderBookBiz.findAllNotReviewedBook());
         return "/teacher/orderbook_review";
     }
 
@@ -75,5 +76,10 @@ public class OrderBookController {
     @ResponseStatus(value = HttpStatus.OK)
     public void update(@RequestBody ChangedItems changedItems, HttpSession session) {
         orderBookBiz.update(changedItems, (String) session.getAttribute("username"));
+    }
+
+    @RequestMapping("audit")
+    public void audit() {
+        orderBookBiz.audit();
     }
 }

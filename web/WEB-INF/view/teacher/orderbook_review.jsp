@@ -34,23 +34,22 @@
                                             <th>单价</th>
                                             <th>学生数量</th>
                                             <th>备注</th>
-                                            <th>操作</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach var="addedBook" items="${addedBookList}">
+                                        <c:forEach var="orderBookReviewVo" items="${notReviewedBookList}">
                                             <tr>
-                                                <td>${addedBook.spec}</td>
-                                                <td>${addedBook.courseTitle}</td>
-                                                <td>${addedBook.bookTitle}</td>
-                                                <td>${addedBook.isbn}</td>
-                                                <td>${addedBook.dataOfPrinting}</td>
-                                                <td>${addedBook.author}</td>
-                                                <td>${addedBook.press}</td>
-                                                <td>${addedBook.category}</td>
-                                                <td>${addedBook.unitPrice}</td>
-                                                <td>${addedBook.stdCount}</td>
-                                                <td>${addedBook.remark}</td>
+                                                <td>${orderBookReviewVo.speciality}</td>
+                                                <td>${orderBookReviewVo.courseTitle}</td>
+                                                <td>${orderBookReviewVo.isbn}</td>
+                                                <td>${orderBookReviewVo.bookTitle}</td>
+                                                <td>${orderBookReviewVo.dateOfPrinting}</td>
+                                                <td>${orderBookReviewVo.author}</td>
+                                                <td>${orderBookReviewVo.press}</td>
+                                                <td>${orderBookReviewVo.category}</td>
+                                                <td>${orderBookReviewVo.unitPrice}</td>
+                                                <td>${orderBookReviewVo.stdCount}</td>
+                                                <td>${orderBookReviewVo.remark}</td>
                                             </tr>
                                         </c:forEach>
                                         </tbody>

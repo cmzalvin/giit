@@ -77,7 +77,7 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="/admin/admin.jsp"><i class="fa fa-book fa-fw"></i> 控制面板</a>
+                        <a href="/main.do/admin"><i class="fa fa-book fa-fw"></i> 控制面板</a>
                     </li>
                     <li>
                         <a href="/user.do/user.view"><i class="fa fa-book fa-fw"></i> 用户管理</a>

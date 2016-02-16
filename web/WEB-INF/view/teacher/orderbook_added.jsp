@@ -55,7 +55,7 @@
                                                     <td class="col-md-1">
                                                         <input type="text" class="form-control"
 
-                                                               value="${bookInfo.dataOfPrinting}"
+                                                               value="${bookInfo.dateOfPrinting}"
                                                                disabled="disabled"
                                                                onchange="addNewValue(this)">
                                                     </td>

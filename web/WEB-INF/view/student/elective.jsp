@@ -37,7 +37,7 @@
                                         <td>${section.weeks}周 ${section.week} ${section.time}节</td>
                                         <td>${section.classroom}</td>
                                         <td>
-                                            <a href="/elective.do?sectionId=${section.id}"
+                                            <a href="/elective.do/add?sectionId=${section.id}"
                                                onclick="return confirm('是否选择该课')">选课</a>
                                         </td>
                                     </tr>

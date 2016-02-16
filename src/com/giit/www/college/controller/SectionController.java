@@ -3,6 +3,7 @@ package com.giit.www.college.controller;
 import com.giit.www.college.service.SectionBiz;
 import com.giit.www.entity.Section;
 import com.giit.www.entity.Timetable;
+import com.giit.www.util.TermContainer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,7 @@ public class SectionController {
     public String sectionAddView(Model m) {
         m.addAttribute("courseTitleList", sectionBiz.findAllCourseTitle());
         m.addAttribute("staffList", sectionBiz.findAllStaff());
+        m.addAttribute("termList", TermContainer.getTermList());
         return "/admin/college/section_add";
     }
 
