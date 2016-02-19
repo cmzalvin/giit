@@ -45,7 +45,7 @@
                     <h3 class="panel-title">请登录</h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form" action="/login.do/login" method="post">
+                    <form role="form" action="${pageContext.request.contextPath}/login.do/login" method="post">
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="账户名" name="username" autofocus>
