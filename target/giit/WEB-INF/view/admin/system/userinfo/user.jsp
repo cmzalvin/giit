@@ -26,7 +26,7 @@
                                     <th>密码</th>
                                     <th>权限</th>
                                     <th>邮箱</th>
-                                    <th></th>
+                                    <%--<th></th>--%>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -37,15 +37,15 @@
                                         <td>${user.password}</td>
                                         <td>${user.authority}</td>
                                         <td>email</td>
-                                        <td><a href="/user.do/findById?id=${user.userId}">修改</a></td>
-                                        <td><a href="/user.do/delete?id=${user.userId}"
+                                        <%--<td><a href="${pageContext.request.contextPath}/user.do/findById?id=${user.userId}">修改</a></td>--%>
+                                        <td><a href="${pageContext.request.contextPath}/user.do/delete?id=${user.userId}"
                                                onclick="return confirm('是否要删除该用户')">删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <a href="/user.do/user_add.view" class="btn btn-primary" role="button">添加用户</a>
+                            <a href="${pageContext.request.contextPath}/user.do/user_add.view" class="btn btn-primary" role="button">添加用户</a>
                         </div>
                         <!-- /.table-responsive -->
                     </div>

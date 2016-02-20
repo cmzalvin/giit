@@ -19,7 +19,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/dept.do/update" method="get">
+                            <form action="${pageContext.request.contextPath}/dept.do/update" method="get">
                                 <label name="id">系名 : ${param.get("deptName")}</label>
                                 <input style="display:none" name="deptId"
                                        value="${param.get("deptId")}">

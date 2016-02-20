@@ -14,20 +14,20 @@
     <title>桂林电子科技大学教材订购系统</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
+    <link href="${pageContext.request.contextPath}/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
           rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- custom CSS -->
-    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- custom Fonts -->
-    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you util the page via file:// -->
@@ -60,11 +60,11 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="/account.do/profile.view"><i class="fa fa-user fa-fw"></i> 用户设置</a>
+                    <li><a href="${pageContext.request.contextPath}/account.do/profile.view"><i class="fa fa-user fa-fw"></i> 用户设置</a>
                     </li>
 
                     <li class="divider"></li>
-                    <li><a href="/login.do/logoutt"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
+                    <li><a href="${pageContext.request.contextPath}/login.do/logoutt"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -77,7 +77,7 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="/main.do/student"> 主页</a>
+                        <a href="${pageContext.request.contextPath}/main.do/student"> 主页</a>
                     </li>
                     <li>
                         <a href="/"> 个人信息</a>
@@ -86,7 +86,7 @@
                         <a href="/"> 课表</a>
                     </li>
                     <li>
-                        <a href="/elective.do/elective.view"> 选课</a>
+                        <a href="${pageContext.request.contextPath}/elective.do/elective.view"> 选课</a>
                     </li>
 
                 </ul>

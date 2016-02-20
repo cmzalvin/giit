@@ -19,7 +19,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/spec.do/update" method="get">
+                            <form action="${pageContext.request.contextPath}/spec.do/update" method="get">
                                 <label name="id">专业名 : ${param.get("specName")}</label>
                                 <input style="display:none" name="specName"
                                        value="${param.get("specName")}">

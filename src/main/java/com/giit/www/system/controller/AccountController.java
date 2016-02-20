@@ -27,6 +27,6 @@ public class AccountController {
     public String update(HttpSession session, String password) {
         String id = (String) session.getAttribute("username");
         accountBiz.updatePassword(id, password);
-        return "";
+        return "redirect:/account.do/profile.view";
     }
 }

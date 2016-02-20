@@ -19,7 +19,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/account.do/update" method="get">
+                            <form action="${pageContext.request.contextPath}/account.do/update" method="get">
                                 <label>新密码</label>
                                 <input class="form-control" name="password">
                                 <label></label>

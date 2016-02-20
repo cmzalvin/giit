@@ -14,7 +14,7 @@
         <result property="telephoneNumber" column="telephone_number"/>
         <result property="student_origin_base" column="studentOriginBase"/>
         <result property="gender" column="gender"/>
-        <result property="photo" column="photo"/>
+        <result property="picPath" column="pic_path"/>
     </resultMap>
     <select id="findAll" resultMap="student_map">
         SELECT * FROM student
@@ -24,7 +24,7 @@
         INSERT INTO student
         (
         student_id,student_name,id_card,year,class_name,
-        telephone_number,student_origin_base,gender,photo
+        telephone_number,student_origin_base,gender,pic_path
         )
         VALUES
         (
@@ -36,7 +36,7 @@
         #{telephoneNumber},
         #{studentOriginBase},
         #{gender},
-        #{photo})
+        #{picPath})
     </insert>
     <delete id="delete" parameterType="int">
         DELETE FROM student WHERE student_id = #{value}

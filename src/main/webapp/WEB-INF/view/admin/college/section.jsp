@@ -42,7 +42,7 @@
                                             <td>${timetable.classroom}</td>
                                         </c:forEach>
                                         <td>
-                                            <a href="/section.do/delete?secId=${section.secId}"
+                                            <a href="${pageContext.request.contextPath}/section.do/delete?secId=${section.secId}"
                                                onclick="return confirm('是否要删除该开课')">删除</a>
                                         </td>
                                     </tr>
@@ -58,8 +58,8 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
-        <a href="/section.do/section_add.view" class="btn btn-primary" role="button">开设课程</a>
-        <a href="/section.do/section_timetable_add.view" class="btn btn-primary" role="button">添加时段</a>
+        <a href="${pageContext.request.contextPath}/section.do/section_add.view" class="btn btn-primary" role="button">开设课程</a>
+        <a href="${pageContext.request.contextPath}/section.do/section_timetable_add.view" class="btn btn-primary" role="button">添加时段</a>
 
         <!-- /.container-fluid -->
     </div>

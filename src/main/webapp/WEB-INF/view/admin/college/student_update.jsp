@@ -19,7 +19,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/student.do/add" method="post" enctype="multipart/form-data">
+                            <form action="${pageContext.request.contextPath}/student.do/update" method="post" enctype="multipart/form-data">
                                 <label>学号:${param.get("studentId")}</label>
                                 <label> </label>
                                 <label>姓名</label>
@@ -40,10 +40,10 @@
                                 <label>生源地</label>
                                 <input class="form-control" name="studentOriginBase">
                                 <label>照片</label>
-                                <input name="photo" type="file">
+                                <input name="pic" type="file">
                                 <label></label>
                                 <button type="submit"
-                                        class="btn btn-primary form-control">添加
+                                        class="btn btn-primary form-control">修改
                                 </button>
                             </form>
                         </div>

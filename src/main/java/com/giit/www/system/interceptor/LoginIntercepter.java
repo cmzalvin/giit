@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
  * Created by c0de8ug on 16-2-14.
  */
 public class LoginIntercepter implements HandlerInterceptor {
+
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
 
@@ -27,13 +28,24 @@ public class LoginIntercepter implements HandlerInterceptor {
             return true;
         }
 
-        httpServletResponse.sendRedirect("/login.jsp");
+        httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/login.jsp");
         return false;
     }
 
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-
+//
+//
+//        String redirectStr = "redirect:";
+//        int strLength = 9;
+//
+//
+//        String path = modelAndView.getViewName();
+//        if (path.indexOf(redirectStr) == 0) {
+//            String temp = path.substring(strLength);
+//
+//            modelAndView.setViewName(redirectStr + contextPath + temp);
+//        }
     }
 
     @Override

@@ -18,7 +18,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/course.do/add" method="get">
+                            <form action="${pageContext.request.contextPath}/course.do/add" method="get">
                                 <label>课程名</label>
                                 <input class="form-control" name="courseTitle">
 

@@ -19,7 +19,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/spec.do/add" method="get">
+                            <form action="${pageContext.request.contextPath}/spec.do/add" method="get">
                                 <label>系名</label>
                                 <select class="form-control" name="deptName">
                                     <c:forEach var="deptName" items="${deptNameList}">

@@ -31,17 +31,17 @@
                                     <tr>
                                         <td>${dept.deptName}</td>
                                         <td>
-                                            <a href="/dept.do/dept_update.view?deptId=${dept.deptId}&deptName=${dept.deptName}">修改</a>
+                                            <a href="${pageContext.request.contextPath}/dept.do/dept_update.view?deptId=${dept.deptId}&deptName=${dept.deptName}">修改</a>
                                         </td>
                                         <td>
-                                            <a href="/dept.do/delete?deptId=${dept.deptId}"
+                                            <a href="${pageContext.request.contextPath}/dept.do/delete?deptId=${dept.deptId}"
                                                onclick="return confirm('是否要删除该系')">删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <a href="/dept.do/dept_add.view" class="btn btn-primary" role="button">添加系</a>
+                            <a href="${pageContext.request.contextPath}/dept.do/dept_add.view" class="btn btn-primary" role="button">添加系</a>
                         </div>
                         <!-- /.table-responsive -->
                     </div>

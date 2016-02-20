@@ -14,20 +14,20 @@
     <title>桂林电子科技大学教材订购系统</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
+    <link href="${pageContext.request.contextPath}/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
           rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- custom CSS -->
-    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- custom Fonts -->
-    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you util the page via file:// -->
@@ -60,11 +60,11 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="/account.do/profile.view"><i class="fa fa-user fa-fw"></i> 用户设置</a>
+                    <li><a href="${pageContext.request.contextPath}/account.do/profile.view"><i class="fa fa-user fa-fw"></i> 用户设置</a>
                     </li>
 
                     <li class="divider"></li>
-                    <li><a href="/login.do/logout"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
+                    <li><a href="${pageContext.request.contextPath}/login.do/logout"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -77,10 +77,10 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="/main.do/admin"><i class="fa fa-book fa-fw"></i> 控制面板</a>
+                        <a href="${pageContext.request.contextPath}/main.do/admin"><i class="fa fa-book fa-fw"></i> 控制面板</a>
                     </li>
                     <li>
-                        <a href="/user.do/user.view"><i class="fa fa-book fa-fw"></i> 用户管理</a>
+                        <a href="${pageContext.request.contextPath}/user.do/user.view"><i class="fa fa-book fa-fw"></i> 用户管理</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> 学院管理<span class="fa arrow"></span></a>
@@ -89,25 +89,25 @@
                                 <a href="/"> 整体概况</a>
                             </li>
                             <li>
-                                <a href="/dept.do/dept.view"> 系部设置</a>
+                                <a href="${pageContext.request.contextPath}/dept.do/dept.view"> 系部设置</a>
                             </li>
                             <li>
-                                <a href="/spec.do/spec.view"> 专业设置</a>
+                                <a href="${pageContext.request.contextPath}/spec.do/spec.view"> 专业设置</a>
                             </li>
                             <li>
-                                <a href="/clazz.do/clazz.view"> 班级管理</a>
+                                <a href="${pageContext.request.contextPath}/clazz.do/clazz.view"> 班级管理</a>
                             </li>
                             <li>
-                                <a href="/course.do/course.view"> 添加课程</a>
+                                <a href="${pageContext.request.contextPath}/course.do/course.view"> 添加课程</a>
                             </li>
                             <li>
-                                <a href="/section.do/section.view"> 课程安排</a>
+                                <a href="${pageContext.request.contextPath}/section.do/section.view"> 课程安排</a>
                             </li>
                             <li>
-                                <a href="/student.do/student.view"> 学生管理</a>
+                                <a href="${pageContext.request.contextPath}/student.do/student.view"> 学生管理</a>
                             </li>
                             <li>
-                                <a href="/orderbook.do/orderbook_review.view/"> 秘书审核</a>
+                                <a href="${pageContext.request.contextPath}/orderbook.do/orderbook_review.view/"> 秘书审核</a>
                             </li>
 
                         </ul>

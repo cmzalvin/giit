@@ -106,20 +106,20 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/bower_components/jquery/dist/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="${pageContext.request.contextPath}/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="/dist/js/sb-admin-2.js"></script>
+<script src="${pageContext.request.contextPath}/dist/js/sb-admin-2.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-<script src="/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="${pageContext.request.contextPath}/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
     $(document).ready(function () {
@@ -160,14 +160,14 @@
             form.changedInfo.secId = btn.form[0].value;
             var alterItemRequest = new XMLHttpRequest();
 
-            alterItemRequest.open("POST", "/orderbook.do/update", true);
+            alterItemRequest.open("POST", "${pageContext.request.contextPath}/orderbook.do/update", true);
             alterItemRequest.setRequestHeader("Content-type", "application/json");
             alterItemRequest.send(JSON.stringify(form.changedInfo));
 
             alterItemRequest.onreadystatechange = function () {
                 if (alterItemRequest.readyState == 4 && alterItemRequest.status == 200) {
                     var refreshFormRequest = new XMLHttpRequest();
-                    refreshFormRequest.open("GET", "/orderbook.do/orderbook_added.view", true);
+                    refreshFormRequest.open("GET", "${pageContext.request.contextPath}/orderbook.do/orderbook_added.view", true);
                     refreshFormRequest.send();
                     refreshFormRequest.onreadystatechange = function () {
                         if (refreshFormRequest.readyState == 4 && refreshFormRequest.status == 200) {

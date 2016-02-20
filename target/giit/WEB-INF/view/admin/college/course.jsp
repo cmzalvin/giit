@@ -39,14 +39,14 @@
                                         <td>${course.credits}</td>
                                         <td>${course.speciality}</td>
                                         <td>
-                                            <a href="/course.do/delete?courseTitle=${course.courseTitle}"
+                                            <a href="${pageContext.request.contextPath}/course.do/delete?courseTitle=${course.courseTitle}"
                                                onclick="return confirm('是否要删除该课')">删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <a href="/course.do/course_add.view" class="btn btn-primary" role="button">添加课程</a>
+                            <a href="${pageContext.request.contextPath}/course.do/course_add.view" class="btn btn-primary" role="button">添加课程</a>
                         </div>
                         <!-- /.table-responsive -->
                     </div>

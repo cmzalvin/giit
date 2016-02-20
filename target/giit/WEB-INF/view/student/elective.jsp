@@ -33,7 +33,7 @@
                                         <td>${section.courseTitle}</td>
                                         <td>${section.teacher}</td>
                                         <td>
-                                            <a href="/elective.do/add?secId=${section.secId}"
+                                            <a href="${pageContext.request.contextPath}/elective.do/add?secId=${section.secId}"
                                                onclick="return confirm('是否选择该课')">选课</a>
                                         </td>
                                     </tr>

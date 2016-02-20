@@ -15,16 +15,16 @@
     <title>登录</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you util the page via file:// -->
@@ -45,7 +45,7 @@
                     <h3 class="panel-title">请登录</h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form" action="/login.do/login" method="post">
+                    <form role="form" action="${pageContext.request.contextPath}/login.do/login" method="post">
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="账户名" name="username" autofocus>
@@ -69,20 +69,20 @@
 </div>
 
 <!-- jQuery -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/bower_components/jquery/dist/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="${pageContext.request.contextPath}/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="dist/js/sb-admin-2.js"></script>
+<script src="${pageContext.request.contextPath}/dist/js/sb-admin-2.js"></script>
 
 <!-- Background -->
-<script src="bower_components/login/jquery.backstretch.min.js"></script>
-<script src="bower_components/login/scripts.js"></script>
+<script src="${pageContext.request.contextPath}/bower_components/login/jquery.backstretch.min.js"></script>
+<script src="${pageContext.request.contextPath}/bower_components/login/scripts.js"></script>
 
 </body>
 

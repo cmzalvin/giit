@@ -19,11 +19,11 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/student.do/add" method="post" enctype="multipart/form-data">
+                            <form action="${pageContext.request.contextPath}/student.do/add" method="post" enctype="multipart/form-data">
                                 <label>姓名</label>
-                                <input class="form-control" name="name">
+                                <input class="form-control" name="studentName">
                                 <label>学号</label>
-                                <input class="form-control" name="id">
+                                <input class="form-control" name="studentId">
                                 <label>身份证号</label>
                                 <input class="form-control" name="idCard">
                                 <label>性别</label>
@@ -40,7 +40,7 @@
                                 <label>生源地</label>
                                 <input class="form-control" name="studentOriginBase">
                                 <label>照片</label>
-                                <input name="photo" type="file">
+                                <input name="pic" type="file">
                                 <label></label>
                                 <button type="submit"
                                         class="btn btn-primary form-control">添加

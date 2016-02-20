@@ -19,7 +19,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/section.do/add" method="get" class="form-group">
+                            <form action="${pageContext.request.contextPath}/section.do/add" method="get" class="form-group">
                                 <label>课程名称</label>
                                 <select class="form-control" name="courseTitle">
                                     <c:forEach var="courseTitle" items="${courseTitleList}">

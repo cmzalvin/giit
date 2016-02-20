@@ -32,10 +32,10 @@
                                         <tr>
                                             <td>${specName}</td>
                                             <td>
-                                                <a href="/spec.do/spec_update.view?specName=${specName}">修改</a>
+                                                <a href="${pageContext.request.contextPath}/spec.do/spec_update.view?specName=${specName}">修改</a>
                                             </td>
                                             <td>
-                                                <a href="/spec.do/delete?specName=${specName}"
+                                                <a href="${pageContext.request.contextPath}/spec.do/delete?specName=${specName}"
                                                    onclick="return confirm('是否要删除该专业')">删除</a>
                                             </td>
                                         </tr>
@@ -55,7 +55,7 @@
         </c:forEach>
 
     </div>
-    <a href="/spec.do/spec_add.view" class="btn btn-primary" role="button">添加专业</a>
+    <a href="${pageContext.request.contextPath}/spec.do/spec_add.view" class="btn btn-primary" role="button">添加专业</a>
     <!-- /.container-fluid -->
 </div>
 </div>

@@ -5,8 +5,11 @@ import com.giit.www.entity.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.annotation.MultipartConfig;
+import java.io.IOException;
 
 /**
  * Created by c0de8ug on 16-2-12.
@@ -36,16 +39,17 @@ public class StudentController {
 
         return "/admin/college/student_update";
     }
+
     @RequestMapping("add")
-    public String add(Model m, Student student) {
-        studentBiz.add(student);
-        return "/student.do/student.view";
+    public String add(Model m, MultipartFile pic, Student student) throws IOException {
+        studentBiz.add(student,pic);
+        return "redirect:/student.do/student.view";
     }
 
     @RequestMapping("delete")
     public String delete(Model m, int studentId) {
         studentBiz.delete(studentId);
-        return "/student.do/student.view";
+        return "redirect:/student.do/student.view";
     }
 
 }

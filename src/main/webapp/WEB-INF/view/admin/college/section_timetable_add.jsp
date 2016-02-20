@@ -19,7 +19,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/section.do/addTimetable" method="get" class="form-group">
+                            <form action="${pageContext.request.contextPath}/section.do/addTimetable" method="get" class="form-group">
                                 <label>课程id</label>
                                 <input class="form-control" name="secId">
                                 <label>周次(输入格式1,2,3,4,5,6,7)</label>

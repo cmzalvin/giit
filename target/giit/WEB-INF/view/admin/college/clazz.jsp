@@ -35,7 +35,7 @@
                                         <td>${clazz.specName}</td>
                                         <td>${clazz.clazzId}</td>
                                         <td>
-                                            <a href="/clazz.do/delete?clazzId=${clazz.clazzId}"
+                                            <a href="${pageContext.request.contextPath}/clazz.do/delete?clazzId=${clazz.clazzId}"
                                                onclick="return confirm('是否要删除该专业')">删除</a>
                                         </td>
                                     </tr>
@@ -56,7 +56,7 @@
         <%--</c:forEach>--%>
 
     </div>
-    <a href="/clazz.do/clazz_add.view" class="btn btn-primary" role="button">添加班级</a>
+    <a href="${pageContext.request.contextPath}/clazz.do/clazz_add.view" class="btn btn-primary" role="button">添加班级</a>
     <!-- /.container-fluid -->
 </div>
 </div>

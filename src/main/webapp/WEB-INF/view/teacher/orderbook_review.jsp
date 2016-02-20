@@ -18,7 +18,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-                                <form method="post" action="/orderbook.do/audit">
+                                <form method="post" action="${pageContext.request.contextPath}/orderbook.do/audit">
                                     <table class="table table-hover"
                                            id="dataTables-example">
                                         <thead>

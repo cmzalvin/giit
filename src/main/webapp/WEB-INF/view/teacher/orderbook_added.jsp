@@ -7,7 +7,7 @@
             <c:forEach var="item" items="${addedBookInfoList}" varStatus="theCount">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form method="post" action="/orderBook.do/update"
+                        <form method="post" action="${pageContext.request.contextPath}/orderBook.do/update"
                               id="alterForm${theCount.count}">
                             <div class="panel panel-default">
                                 <div class="panel-heading">

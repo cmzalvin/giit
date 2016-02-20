@@ -12,7 +12,7 @@ public class Student {
     String telephoneNumber;
     String studentOriginBase;
     String gender;
-    byte[] photo;
+    String picPath;
 
     public String getStudentId() {
         return studentId;
@@ -78,11 +78,11 @@ public class Student {
         this.gender = gender;
     }
 
-    public byte[] getPhoto() {
-        return photo;
+    public String getPicPath() {
+        return picPath;
     }
 
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
+    public void setPicPath(String picPath) {
+        this.picPath = picPath;
     }
 }

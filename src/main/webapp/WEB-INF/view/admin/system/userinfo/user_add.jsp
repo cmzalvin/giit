@@ -19,7 +19,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/user.do/add" method="post">
+                            <form action="${pageContext.request.contextPath}/user.do/add" method="post">
                                 <label>用户名</label>
                                 <input class="form-control" name="userId">
                                 <label>密码</label>
@@ -50,4 +50,4 @@
 <!-- /#page-wrapper -->
 </div>
 <!-- /#wrapper -->
-<jsp:include page="/bottom.jsp"></jsp:include>
+<jsp:include page="${request.getContextPath}/bottom.jsp"></jsp:include>

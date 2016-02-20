@@ -83,6 +83,6 @@ public class OrderBookController {
     public String audit(HttpSession session) {
         List<OrderBookReviewVo> orderBookReviewVoList = (List<OrderBookReviewVo>) session.getAttribute("notReviewedBookList");
         orderBookBiz.audit(orderBookReviewVoList);
-        return "orderbook.do/orderbook_review.view";
+        return "redirect:/orderbook.do/orderbook_review.view";
     }
 }

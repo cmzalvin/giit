@@ -18,7 +18,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/dept.do/add" method="get">
+                            <form action="${pageContext.request.contextPath}/dept.do/add" method="get">
                                 <label>系名</label>
                                 <input class="form-control" name="deptName">
                                 <label></label>

@@ -45,17 +45,17 @@
                                         <td>${student.year}</td>
                                         <td>${student.studentOriginBase}</td>
                                         <td>
-                                            <a href="/student.do/student_update.view?studentId=${student.studentId}">修改</a>
+                                            <a href="${pageContext.request.contextPath}/student.do/student_update.view?studentId=${student.studentId}">修改</a>
                                         </td>
                                         <td>
-                                            <a href="/student.do/delete?studentId=${student.studentId}"
+                                            <a href="${pageContext.request.contextPath}/student.do/delete?studentId=${student.studentId}"
                                                onclick="return confirm('是否要删除该学生信息')">删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <a href="/student.do/student_add.view" class="btn btn-primary" role="button">添加学生</a>
+                            <a href="${pageContext.request.contextPath}/student.do/student_add.view" class="btn btn-primary" role="button">添加学生</a>
                         </div>
                         <!-- /.table-responsive -->
                     </div>

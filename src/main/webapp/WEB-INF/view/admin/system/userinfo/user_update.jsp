@@ -19,7 +19,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="/user.do/update" method="post">
+                            <form action="${pageContext.request.contextPath}/user.do/update" method="post">
                                 <label name="id">用户名 : ${user.userId}</label>
                                 <input style="display:none" name="userId" value="${user.userId}">
 
