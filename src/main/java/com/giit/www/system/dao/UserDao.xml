@@ -9,8 +9,8 @@
     <resultMap id="user_map" type="User">
         <id property="userId" column="user_id"/>
         <result property="password" column="password"/>
-        <result property="hash" column="hash"/>
-        <result property="authority" column="authority"/>
+        <result property="salt" column="salt"/>
+        <result property="roleIdsStr" column="role_ids"/>
     </resultMap>
     <select id="findAll" resultMap="user_map">
         SELECT * FROM user
@@ -29,7 +29,7 @@
     </update>
 
     <insert id="add" parameterType="User">
-        INSERT INTO user(user_id,password,hash,authority) VALUES(#{userId},#{password},#{hash},#{authority})
+        INSERT INTO user(user_id,password,salt,role_ids,locked) VALUES(#{userId},#{password},#{salt},#{roleIdsStr},#{locked})
     </insert>
 
     <select id="findByIdAndPassword" parameterType="map" resultMap="user_map">
@@ -39,4 +39,6 @@
     <delete id="delete" parameterType="String">
         DELETE FROM user WHERE user_id = #{value}
     </delete>
+
+
 </mapper>

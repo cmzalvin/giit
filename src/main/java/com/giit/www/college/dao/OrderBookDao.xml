@@ -40,7 +40,7 @@
         <result property="dateOfPrinting" column="date_of_printing"/>
         <result property="author" column="author"/>
         <result property="press" column="press"/>
-        <collection property="countList" column="count" ofType="Integer"/>
+        <result property="count" column="count"/>
     </resultMap>
 
     <insert id="add" parameterType="OrderBook">

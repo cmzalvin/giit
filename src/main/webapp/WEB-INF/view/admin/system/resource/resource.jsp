@@ -22,30 +22,30 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                 <tr>
-                                    <th>用户名</th>
-                                    <th>密码</th>
-                                    <th>权限</th>
-                                    <th>邮箱</th>
-                                    <%--<th></th>--%>
+                                    <th>角色名称</th>
+                                    <th>角色描述</th>
+                                    <th>拥有的资源</th>
+                                    <th>操作</th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach var="user" items="${userList}">
+                                <c:forEach var="role" items="${roleList}">
                                     <tr>
-                                        <td>${user.userId}</td>
-                                        <td>${user.password}</td>
-                                        <td>${user.authority}</td>
-                                        <td>email</td>
-                                        <%--<td><a href="${pageContext.request.contextPath}/user.do/findById?id=${user.userId}">修改</a></td>--%>
-                                        <td><a href="${pageContext.request.contextPath}/user.do/delete?id=${user.userId}"
-                                               onclick="return confirm('是否要删除该用户')">删除</a>
+                                        <td>${role}</td>
+                                        <td>${role}</td>
+                                        <td>${role}</td>
+                                        <td>${role}</td>
+                                        <td>
+                                            <a href="${pageContext.request.contextPath}/role.do/delete?id=${role.roleId}"
+                                               onclick="return confirm('是否要删除该角色')">删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <a href="${pageContext.request.contextPath}/user.do/user_add.view" class="btn btn-primary" role="button">添加用户</a>
+                            <a href="${pageContext.request.contextPath}/role.do/role_add.view" class="btn btn-primary"
+                               role="button">添加角色</a>
                         </div>
                         <!-- /.table-responsive -->
                     </div>

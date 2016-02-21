@@ -11,11 +11,14 @@ public class ReviewedBookVo {
     String dateOfPrinting;
     String author;
     String press;
-    List<Integer> countList;
-    int amount;
+    int count;
 
-    public int getAmount() {
-        return amount;
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public String getBookTitle() {
@@ -58,15 +61,5 @@ public class ReviewedBookVo {
         this.press = press;
     }
 
-    public List<Integer> getCountList() {
-        return countList;
-    }
 
-    public void setCountList(List<Integer> countList) {
-        this.countList = countList;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
 }

@@ -19,20 +19,17 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="${pageContext.request.contextPath}/user.do/update" method="post">
-                                <label name="id">用户名 : ${user.userId}</label>
-                                <input style="display:none" name="userId" value="${user.userId}">
+                            <form action="${pageContext.request.contextPath}/role.do/add" method="post">
+                                <label>角色名</label>
+                                <input class="form-control" name="role">
+                                <label>角色描述</label>
+                                <input class="form-control" name="description">
+                                <label>拥有的资源</label>
+                                <input class="form-control" name="resourceIds">
 
-                                <p></p>
-                                <label>新密码</label>
-                                <input class="form-control" name="password">
-                                <label>邮箱</label>
-                                <input class="form-control" name="email">
-                                <label>权限</label>
-                                <input class="form-control" name="authority">
                                 <label></label>
                                 <button type="submit"
-                                        class="btn btn-primary form-control">修改
+                                        class="btn btn-primary form-control">添加
                                 </button>
                             </form>
                         </div>
@@ -52,4 +49,8 @@
 <!-- /#page-wrapper -->
 </div>
 <!-- /#wrapper -->
-<jsp:include page="/bottom.jsp"></jsp:include>
+
+
+<jsp:include page="${request.getContextPath}/bottom.jsp"></jsp:include>
+
+

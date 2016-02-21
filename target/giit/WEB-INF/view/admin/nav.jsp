@@ -14,7 +14,8 @@
     <title>桂林电子科技大学教材订购系统</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="${pageContext.request.contextPath}/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bower_components/bootstrap/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <!-- DataTables CSS -->
     <link href="${pageContext.request.contextPath}/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
@@ -27,7 +28,8 @@
     <link href="${pageContext.request.contextPath}/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- custom Fonts -->
-    <link href="${pageContext.request.contextPath}/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/bower_components/font-awesome/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you util the page via file:// -->
@@ -60,11 +62,13 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="${pageContext.request.contextPath}/account.do/profile.view"><i class="fa fa-user fa-fw"></i> 用户设置</a>
+                    <li><a href="${pageContext.request.contextPath}/account.do/profile.view"><i
+                            class="fa fa-user fa-fw"></i> 用户设置</a>
                     </li>
 
                     <li class="divider"></li>
-                    <li><a href="${pageContext.request.contextPath}/login.do/logout"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
+                    <li><a href="${pageContext.request.contextPath}/login.do/logout"><i
+                            class="fa fa-sign-out fa-fw"></i> 退出</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -80,7 +84,12 @@
                         <a href="${pageContext.request.contextPath}/main.do/admin"><i class="fa fa-book fa-fw"></i> 控制面板</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/user.do/user.view"><i class="fa fa-book fa-fw"></i> 用户管理</a>
+                        <a href="${pageContext.request.contextPath}/user.do/user.view"><i class="fa fa-book fa-fw"></i>
+                            用户管理</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/role.do/role.view"><i class="fa fa-book fa-fw"></i>
+                            角色管理</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> 学院管理<span class="fa arrow"></span></a>
@@ -107,7 +116,8 @@
                                 <a href="${pageContext.request.contextPath}/student.do/student.view"> 学生管理</a>
                             </li>
                             <li>
-                                <a href="${pageContext.request.contextPath}/orderbook.do/orderbook_review.view/"> 秘书审核</a>
+                                <a href="${pageContext.request.contextPath}/orderbook.do/orderbook_review.view/">
+                                    秘书审核</a>
                             </li>
 
                         </ul>

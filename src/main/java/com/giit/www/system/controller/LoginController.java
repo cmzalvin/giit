@@ -24,8 +24,10 @@ public class LoginController {
         user = accountBiz.findByIdAndPassword(username, password);
         if (user != null) {
             session.setAttribute("username", username);
-            String authority = user.getAuthority();
-            switch (authority) {
+
+            //TODO 为了测试写死
+            String temp = "0";
+            switch (temp) {
                 case "0":
                     return "/admin/main";
                 case "1":

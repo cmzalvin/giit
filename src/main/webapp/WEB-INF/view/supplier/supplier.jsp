@@ -39,7 +39,7 @@
                                                 <td>${reviewedBook.dateOfPrinting}</td>
                                                 <td>${reviewedBook.author}</td>
                                                 <td>${reviewedBook.press}</td>
-                                                <td>${reviewedBook.amount}</td>
+                                                <td>${reviewedBook.count}</td>
                                             </tr>
                                         </c:forEach>
 

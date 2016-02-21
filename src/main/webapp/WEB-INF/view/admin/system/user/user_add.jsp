@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <jsp:include page="/WEB-INF/view/admin/nav.jsp"></jsp:include>
 
 <!-- Page Content -->
@@ -19,20 +20,23 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="${pageContext.request.contextPath}/user.do/update" method="post">
-                                <label name="id">用户名 : ${user.userId}</label>
-                                <input style="display:none" name="userId" value="${user.userId}">
-
-                                <p></p>
-                                <label>新密码</label>
+                            <form action="${pageContext.request.contextPath}/user.do/add" method="post">
+                                <label>用户名</label>
+                                <input class="form-control" name="userId">
+                                <label>密码</label>
                                 <input class="form-control" name="password">
                                 <label>邮箱</label>
                                 <input class="form-control" name="email">
-                                <label>权限</label>
-                                <input class="form-control" name="authority">
+                                <label>角色列表(按住shift键多选)</label>
+                                <select multiple="true" class="form-control" name="roleIds">
+                                    <c:forEach var="role" items="${roleList}">
+                                        <option value="${role.id}">${role.description}</option>
+                                    </c:forEach>
+                                </select>
+
                                 <label></label>
                                 <button type="submit"
-                                        class="btn btn-primary form-control">修改
+                                        class="btn btn-primary form-control">添加
                                 </button>
                             </form>
                         </div>
@@ -52,4 +56,4 @@
 <!-- /#page-wrapper -->
 </div>
 <!-- /#wrapper -->
-<jsp:include page="/bottom.jsp"></jsp:include>
+<jsp:include page="${request.getContextPath}/bottom.jsp"></jsp:include>

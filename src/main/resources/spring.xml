@@ -23,7 +23,7 @@
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="configLocation" value="classpath:mybatisConfig.xml"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="typeAliasesPackage" value="com.giit.www.entity,com.giit.www.entity.custom"/>
     </bean>
@@ -40,5 +40,5 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
-
+    <import resource="classpath:spring-shiro.xml"/>
 </beans>
