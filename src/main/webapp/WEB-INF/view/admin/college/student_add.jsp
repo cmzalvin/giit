@@ -19,11 +19,14 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="${pageContext.request.contextPath}/student.do/add" method="post" enctype="multipart/form-data">
+                            <form action="${pageContext.request.contextPath}/student.do/add" method="post"
+                                  enctype="multipart/form-data">
+                                <label>学号(作为账户登录)</label>
+                                <input class="form-control" name="studentId">
+                                <label>密码</label>
+                                <input class="form-control" name="password">
                                 <label>姓名</label>
                                 <input class="form-control" name="studentName">
-                                <label>学号</label>
-                                <input class="form-control" name="studentId">
                                 <label>身份证号</label>
                                 <input class="form-control" name="idCard">
                                 <label>性别</label>

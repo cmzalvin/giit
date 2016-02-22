@@ -27,7 +27,7 @@
         UPDATE staff SET spec_name = #{newSpecName} WHERE spec_name = #{specName}
     </update>
 
-    <insert id="add" parameterType="Spec">
+    <insert id="add" parameterType="Staff">
         INSERT INTO staff(staff_id,staff_name) VALUES(#{staffId},#{staffName})
     </insert>
 

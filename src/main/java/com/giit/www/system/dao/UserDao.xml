@@ -12,8 +12,9 @@
         <result property="salt" column="salt"/>
         <result property="roleIdsStr" column="role_ids"/>
     </resultMap>
+    <!--TODO 有严重的问题,这里要换成自增的id,把user表增加一个id字段,和username-->
     <select id="findAll" resultMap="user_map">
-        SELECT * FROM user
+        SELECT * FROM user WHERE user_id != 'admin'
     </select>
 
     <select id="findById" parameterType="String" resultMap="user_map">

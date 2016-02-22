@@ -6,6 +6,8 @@ import com.giit.www.entity.custom.ChangedItems;
 import com.giit.www.entity.custom.OrderBookReviewVo;
 import com.giit.www.entity.custom.OrderBookVo;
 import com.giit.www.util.TermContainer;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,18 +26,18 @@ import java.util.Map;
  * Created by c0de8ug on 16-2-13.
  */
 //TODO URL我自己定义全小写
-@RequestMapping("orderbook.do")
 @Controller
+@RequestMapping("orderbook.do")
+
 public class OrderBookController {
     @Resource(name = "orderBookBizImpl")
     private OrderBookBiz orderBookBiz;
 
+    @RequiresRoles(value = {"admin", "teacher"}, logical = Logical.OR)
     @RequestMapping("orderbook.view")
     public String orderBookView(Model m, HttpSession httpSession) {
         String staffId = (String) httpSession.getAttribute("username");
 
-        //TODO 这里的year应该从服务器端开课的地方拿,但是如何拿怎么拿有点不理解,先给它一个值
-        //而且对于一个老师上多门相同的课区分也有问题
         List<Section> sectionList = orderBookBiz.findSelectedSection(staffId, TermContainer.now());
         int courseCount = sectionList.size();
         m.addAttribute("selectedSectionList", sectionList);
@@ -43,6 +45,7 @@ public class OrderBookController {
         return "/teacher/orderbook";
     }
 
+    @RequiresRoles(value = {"admin", "teacher"}, logical = Logical.OR)
     @RequestMapping("orderbook_review.view")
     public String orderBookReviewView(Model m, HttpSession session) {
         //TODO 放到SESSION方便处理
@@ -50,11 +53,13 @@ public class OrderBookController {
         return "/teacher/orderbook_review";
     }
 
+    @RequiresRoles(value = {"admin", "teacher"}, logical = Logical.OR)
     @RequestMapping("orderbook_add.view")
     public String orderBookAddView(Model m) {
         return "/teacher/orderbook_add";
     }
 
+    @RequiresRoles(value = {"admin", "teacher"}, logical = Logical.OR)
     @RequestMapping("orderbook_added.view")
     public String orderBookAddedView(Model m, HttpSession session) {
         String staffId = (String) session.getAttribute("username");
@@ -62,7 +67,7 @@ public class OrderBookController {
         return "/teacher/orderbook_added";
     }
 
-
+    @RequiresRoles(value = {"admin", "teacher"}, logical = Logical.OR)
     @RequestMapping("add")
     public String add(HttpServletRequest request, HttpSession session) {
         Map map = request.getParameterMap();
@@ -73,12 +78,14 @@ public class OrderBookController {
         return "redirect:/orderbook.do/orderbook.view";
     }
 
+    @RequiresRoles(value = {"admin", "teacher"}, logical = Logical.OR)
     @RequestMapping("update")
     @ResponseStatus(value = HttpStatus.OK)
     public void update(@RequestBody ChangedItems changedItems, HttpSession session) {
         orderBookBiz.update(changedItems, (String) session.getAttribute("username"));
     }
 
+    @RequiresRoles(value = {"admin", "teacher"}, logical = Logical.OR)
     @RequestMapping("audit")
     public String audit(HttpSession session) {
         List<OrderBookReviewVo> orderBookReviewVoList = (List<OrderBookReviewVo>) session.getAttribute("notReviewedBookList");

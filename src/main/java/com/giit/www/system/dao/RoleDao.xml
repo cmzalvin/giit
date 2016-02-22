@@ -30,7 +30,12 @@
         SELECT id, role, description, resource_ids, available FROM role WHERE id=#{id}
     </select>
 
+    <!--TODO 写死了有问题-->
     <select id="findAll" resultMap="role_map">
-        SELECT id, role, description, resource_ids , available FROM role
+        SELECT id, role, description, resource_ids , available FROM role WHERE role.id != 1
     </select>
+    <select id="findByDescription" parameterType="String" resultMap="role_map">
+        SELECT id, role, description, resource_ids, available FROM role WHERE description=#{description}
+    </select>
+
 </mapper>

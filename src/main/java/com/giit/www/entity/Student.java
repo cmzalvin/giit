@@ -5,6 +5,7 @@ package com.giit.www.entity;
  */
 public class Student {
     String studentId;
+    String password;
     String studentName;
     String idCard;
     String year;
@@ -13,6 +14,14 @@ public class Student {
     String studentOriginBase;
     String gender;
     String picPath;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getStudentId() {
         return studentId;

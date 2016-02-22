@@ -13,7 +13,7 @@ import java.util.List;
 public interface SectionBiz {
     public void delete(int sectionId);
 
-    public void add(Section section, String staffId);
+    public void add(Section section);
 
     public List<SectionCustom> findAllCustom();
 

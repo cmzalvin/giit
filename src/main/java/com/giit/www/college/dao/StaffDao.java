@@ -13,4 +13,6 @@ public interface StaffDao {
     public String findIdByName(String staffId);
 
     public List<Staff> findAll();
+
+    void add(Staff staff);
 }

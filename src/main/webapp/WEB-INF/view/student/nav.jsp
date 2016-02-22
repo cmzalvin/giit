@@ -64,7 +64,7 @@
                     </li>
 
                     <li class="divider"></li>
-                    <li><a href="${pageContext.request.contextPath}/login.do/logoutt"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
+                    <li><a href="${pageContext.request.contextPath}/logout"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->

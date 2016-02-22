@@ -22,4 +22,5 @@ public class Staff {
     public void setStaffName(String staffName) {
         this.staffName = staffName;
     }
+
 }

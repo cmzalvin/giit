@@ -40,8 +40,7 @@ public class SectionBizImpl implements SectionBiz {
     }
 
     @Override
-    public void add(Section section, String staffId) {
-        section.setStaffId(staffId);
+    public void add(Section section) {
         sectionDao.add(section);
 
     }

@@ -6,6 +6,7 @@ import com.giit.www.system.service.ResourceBiz;
 import com.giit.www.system.service.RoleBiz;
 import com.giit.www.system.service.impl.RoleBizImpl;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,8 +24,10 @@ import java.util.Set;
  * Created by c0de8ug on 16-2-21.
  */
 @Controller
+
 @RequestMapping("/role.do")
 public class RoleController {
+
 
     @Resource(name = "roleBizImpl")
     private RoleBiz roleBiz;
@@ -32,25 +35,28 @@ public class RoleController {
     @Resource(name = "resourceBizImpl")
     private ResourceBiz resourceBiz;
 
+    @RequiresRoles("admin")
     @RequestMapping("role.view")
     public String roleView(Model model) {
         model.addAttribute("roleList", roleBiz.findAll());
         return "/admin/system/role/role";
     }
 
+    @RequiresRoles("admin")
     @RequestMapping("role_add.view")
     public String roleAddView(Model model) {
         model.addAttribute("roleList", roleBiz.findAll());
         return "/admin/system/role/role_add";
     }
 
-
+    @RequiresRoles("admin")
     @RequestMapping("add")
     public String add(Role role, RedirectAttributes redirectAttributes) {
         roleBiz.createRole(role);
         return "redirect:/role.do/role.view";
     }
 
+    @RequiresRoles("admin")
     @RequestMapping("delete")
     public String delete(Long id, RedirectAttributes redirectAttributes) {
         roleBiz.deleteRole(id);
@@ -94,9 +100,9 @@ public class RoleController {
 //    }
 
 
-    private void setCommonData(Model model) {
-        model.addAttribute("resourceList", roleBiz.findAll());
-    }
+//    private void setCommonData(Model model) {
+//        model.addAttribute("resourceList", roleBiz.findAll());
+//    }
 
 
 }

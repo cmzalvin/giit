@@ -19,7 +19,8 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form action="${pageContext.request.contextPath}/section.do/add" method="get" class="form-group">
+                            <form action="${pageContext.request.contextPath}/section.do/add" method="get"
+                                  class="form-group">
                                 <label>课程名称</label>
                                 <select class="form-control" name="courseTitle">
                                     <c:forEach var="courseTitle" items="${courseTitleList}">
@@ -35,7 +36,7 @@
                                 </select>
 
                                 <label>可选课人数</label>
-                                <input class="form-control" name="limit">
+                                <input class="form-control" name="limitCount">
                                 <label>开设时间</label>
                                 <select class="form-control" name="year">
                                     <c:forEach var="term" items="${termList}">
