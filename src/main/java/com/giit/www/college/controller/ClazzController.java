@@ -14,7 +14,6 @@ import javax.annotation.Resource;
  * Created by c0de8ug on 16-2-11.
  */
 @Controller
-
 @RequestMapping("clazz.do")
 public class ClazzController {
 

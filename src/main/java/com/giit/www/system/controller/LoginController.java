@@ -20,42 +20,10 @@ import javax.servlet.http.HttpSession;
  * Created by c0de8ug on 16-2-14.
  */
 @Controller
-//@RequestMapping("login.do")
 public class LoginController {
 
     @Resource(name = "userBizImpl")
     UserBiz userBiz;
-
-//    @Resource(name = "accountBizImpl")
-//    private AccountBiz accountBiz;
-//
-//    @RequestMapping("login")
-//    public String login(HttpSession session, String username, String password) {
-//        User user;
-//        user = accountBiz.findByIdAndPassword(username, password);
-//        if (user != null) {
-//            session.setAttribute("username", username);
-//
-//            //TODO 为了测试写死
-//            String temp = "0";
-//            switch (temp) {
-//                case "0":
-//                    return "/admin/main";
-//                case "1":
-//                    return "/teacher/main";
-//                case "2":
-//                    return "/student/main";
-//            }
-//        }
-//        return "redirect:/login.jsp";
-//    }
-//
-//    @RequestMapping("logout")
-//    public String logout(HttpSession session) {
-//        session.invalidate();
-//        return "redirect:/login.jsp";
-//    }
-
 
     @RequestMapping("login")
     public String login(HttpServletRequest req, Model model, HttpSession session) {

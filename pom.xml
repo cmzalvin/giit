@@ -12,6 +12,7 @@
 
 
     <dependencies>
+        <!--junit相关包-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -23,12 +24,8 @@
             <artifactId>hamcrest-core</artifactId>
             <version>1.3</version>
         </dependency>
-        <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
-            <version>3.2.1</version>
-        </dependency>
 
+        <!--shiro相关包-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
@@ -55,7 +52,7 @@
             <version>1.2.4</version>
         </dependency>
 
-
+        <!--mysql数据库连接-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -74,6 +71,8 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.8.8</version>
         </dependency>
+
+        <!--spring相关包-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
@@ -85,26 +84,25 @@
             <artifactId>spring-context-support</artifactId>
             <version>4.2.4.RELEASE</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>4.2.4.RELEASE</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>4.2.4.RELEASE</version>
         </dependency>
 
+        <!--springmvc-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>4.2.4.RELEASE</version>
         </dependency>
 
-
+        <!--servlet,jsp,jstl-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -123,7 +121,7 @@
         </dependency>
 
 
-        <!--mybatis-->
+        <!--mybatis相关包-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
@@ -164,7 +162,6 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.14</version>
         </dependency>
-
         <dependency>
             <groupId>ognl</groupId>
             <artifactId>ognl</artifactId>
@@ -176,6 +173,7 @@
             <version>3.20.0-GA</version>
         </dependency>
 
+        <!--数据源-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
@@ -186,18 +184,22 @@
             <artifactId>commons-dbcp2</artifactId>
             <version>2.1</version>
         </dependency>
+
         <!--json parser-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.6</version>
         </dependency>
+
         <!--file upload-->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
             <version>1.3.1</version>
         </dependency>
+
+
 
     </dependencies>
 
