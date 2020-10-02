@@ -23,11 +23,11 @@ public class DefaultExceptionHandler implements HandlerExceptionResolver {
 
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
-        ModelAndView mv = new ModelAndView();
+        
         if (e instanceof AuthorizationException) {
-
-            mv.setViewName("redirect:/login");
+            return new ModelAndView("redirect:/login");
+//             mv.setViewName("redirect:/login");
         }
-        return mv;
+        return new ModelAndView();
     }
 }
